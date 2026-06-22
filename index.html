@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blueprint for India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D1117;
+    --paper: #F5F0E8;
+    --saffron: #E8650A;
+    --teal: #0D6B6E;
+    --gold: #C8972A;
+    --cream: #FAF7F0;
+    --warm-gray: #8C7E6E;
+    --border: rgba(13,17,23,0.12);
+    --white: #FFFFFF;
+    --light-blue: #D6E4F0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,240,232,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--saffron); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--warm-gray);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--saffron); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 60px 80px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--saffron);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.35s forwards;
+  }
+
+  .hero-title .accent { color: var(--saffron); font-style: italic; }
+
+  .hero-title-sub {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--teal);
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.45s forwards;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #3D3530;
+    max-width: 480px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.55s forwards;
+  }
+
+  .hero-description strong { font-weight: 600; color: var(--ink); }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.65s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--saffron);
+    border-color: var(--saffron);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--ink);
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    transition: all 0.25s ease;
+  }
+
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.75s forwards;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--saffron);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    filter: sepia(20%) contrast(1.1);
+    animation: fadeIn 1.2s ease 0.4s forwards;
+    opacity: 0;
+  }
+
+  .hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(13,17,23,0.3) 0%, rgba(232,101,10,0.2) 100%);
+  }
+
+  .hero-image-quote {
+    position: absolute;
+    bottom: 40px;
+    left: 32px;
+    right: 32px;
+    background: rgba(13,17,23,0.88);
+    backdrop-filter: blur(8px);
+    padding: 24px 28px;
+    border-left: 3px solid var(--saffron);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+  }
+
+  .hero-image-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--paper);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .hero-image-quote cite {
+    font-size: 0.78rem;
+    color: var(--saffron);
+    font-style: normal;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* PHILOSOPHY */
+  .philosophy-band {
+    background: var(--ink);
+    padding: 80px 60px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .philosophy-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 16px;
+  }
+
+  .philosophy-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--paper);
+    line-height: 1.2;
+  }
+
+  .philosophy-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(245,240,232,0.75);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .philosophy-text strong { color: var(--paper); font-weight: 600; }
+
+  .philosophy-manifesto {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--saffron);
+    line-height: 1.5;
+    padding: 24px 0;
+    border-top: 1px solid rgba(245,240,232,0.15);
+    border-bottom: 1px solid rgba(245,240,232,0.15);
+  }
+
+  /* IDEAS */
+  .ideas-section {
+    padding: 100px 60px;
+    background: var(--cream);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--warm-gray);
+    max-width: 280px;
+    text-align: right;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* IDEA CARD */
+  .idea-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 48px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .idea-featured:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(13,17,23,0.12);
+  }
+
+  .idea-featured-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    background: var(--ink);
+  }
+
+  .idea-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(15%) contrast(1.05);
+    transition: transform 0.6s ease;
+  }
+
+  .idea-featured:hover .idea-featured-image img { transform: scale(1.04); }
+
+  .idea-featured-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,17,23,0.5) 0%, transparent 60%);
+  }
+
+  .idea-number-badge {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: var(--saffron);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    letter-spacing: 0.08em;
+  }
+
+  .idea-status-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--teal);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .idea-featured-content {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .idea-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .idea-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .idea-problem-label, .idea-solution-label, .how-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+
+  .idea-problem {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4A4040;
+    font-weight: 300;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 2px solid var(--saffron);
+  }
+
+  .idea-solution {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4A4040;
+    font-weight: 300;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 2px solid var(--teal);
+  }
+
+  .how-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .how-steps li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    color: #4A4040;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .how-steps li::before {
+    content: '→';
+    color: var(--saffron);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .idea-impact {
+    background: rgba(13,107,110,0.06);
+    border: 1px solid rgba(13,107,110,0.15);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+
+  .idea-impact-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+
+  .idea-impact p {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .watch-reel-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--saffron);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: gap 0.2s ease;
+  }
+
+  .watch-reel-link:hover { gap: 16px; }
+
+  /* COMING SOON */
+  .coming-soon-header {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 20px;
+    margin-top: 48px;
+  }
+
+  .coming-soon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .coming-soon-card {
+    background: var(--cream);
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s ease;
+  }
+
+  .coming-soon-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--saffron);
+    transition: height 0.3s ease;
+  }
+
+  .coming-soon-card:hover::before { height: 100%; }
+  .coming-soon-card:hover { background: white; }
+
+  .coming-soon-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+
+  .coming-soon-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .coming-soon-category {
+    font-size: 0.72rem;
+    color: var(--warm-gray);
+    font-weight: 500;
+  }
+
+  .coming-soon-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+  }
+
+  /* ABOUT */
+  .about-section {
+    padding: 100px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    background: var(--paper);
+  }
+
+  .about-image-container { position: relative; }
+
+  .about-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: sepia(20%) contrast(1.08);
+  }
+
+  .about-image-frame {
+    position: absolute;
+    top: 20px; left: 20px;
+    right: -20px; bottom: -20px;
+    border: 2px solid var(--saffron);
+    z-index: -1;
+  }
+
+  .about-years-badge {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: var(--saffron);
+    color: white;
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .about-years-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2.4rem;
+    line-height: 1;
+    display: block;
+  }
+
+  .about-years-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+
+  .about-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .about-title em { font-style: italic; color: var(--saffron); }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #4A4040;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .about-text strong { font-weight: 600; color: var(--ink); }
+
+  .about-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--saffron);
+    margin: 32px 0;
+  }
+
+  .about-signature {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--ink);
+  }
+
+  .about-signature-sub {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* INSTAGRAM */
+  .instagram-section {
+    background: var(--ink);
+    padding: 80px 60px;
+    text-align: center;
+  }
+
+  .instagram-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 16px;
+  }
+
+  .instagram-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--paper);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .instagram-subtitle {
+    font-size: 1rem;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .instagram-handle {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(245,240,232,0.08);
+    border: 1px solid rgba(245,240,232,0.15);
+    padding: 14px 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--paper);
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    margin-bottom: 16px;
+    display: inline-flex;
+  }
+
+  .instagram-handle:hover {
+    background: var(--saffron);
+    border-color: var(--saffron);
+  }
+
+  .instagram-cadence {
+    font-size: 0.8rem;
+    color: rgba(245,240,232,0.4);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+    display: block;
+    margin-top: 12px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(245,240,232,0.08);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--paper);
+  }
+
+  .footer-brand span { color: var(--saffron); }
+
+  .footer-credit {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.35);
+    letter-spacing: 0.04em;
+  }
+
+  .footer-license {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(245,240,232,0.3);
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.7; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 50vw; min-height: 320px; }
+    .hero-left { padding: 120px 40px 60px; }
+    .philosophy-band { grid-template-columns: 1fr; gap: 40px; padding: 60px 40px; }
+    .ideas-section { padding: 80px 40px; }
+    .idea-featured { grid-template-columns: 1fr; }
+    .idea-featured-image { min-height: 280px; }
+    .coming-soon-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-section { grid-template-columns: 1fr; gap: 60px; padding: 80px 40px; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .section-subtitle { text-align: left; max-width: 100%; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-license { text-align: center; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero-left { padding: 100px 24px 48px; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .philosophy-band, .ideas-section, .about-section, .instagram-section { padding: 60px 24px; }
+    .idea-featured-content { padding: 32px 24px; }
+    .coming-soon-grid { grid-template-columns: 1fr 1fr; }
+    footer { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Blueprint for <span>India</span></a>
+  <ul class="nav-links">
+    <li><a href="#ideas">Ideas</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#follow">Follow</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">A Citizen's Vision — Bangalore, 2026</div>
+    <h1 class="hero-title">Blueprint for <span class="accent">India</span></h1>
+    <div class="hero-title-sub">Started in Bangalore.</div>
+    <p class="hero-description">
+      <strong>A blueprint for every city.</strong> Not complaints. Not petitions.
+      A growing collection of practical, implementable ideas for rebuilding accountability
+      into every broken system — starting where we know best.
+    </p>
+    <div class="hero-cta">
+      <a href="#ideas" class="btn-primary">Explore the Ideas</a>
+      <a href="#about" class="btn-secondary">Our Story</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">21+</div>
+        <div class="stat-label">Ideas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">35</div>
+        <div class="stat-label">Years in Bangalore</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Goal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img class="hero-image"
+      src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&q=85"
+      alt="Bangalore cityscape"
+      onerror="this.style.opacity='0'">
+    <div class="hero-image-overlay"></div>
+    <div class="hero-image-quote">
+      <p>"This is what it looks like today. What if it didn't have to be? Here's one idea that could change it."</p>
+      <cite>— The Blueprint for India</cite>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy-band">
+  <div>
+    <div class="philosophy-label">The Philosophy</div>
+    <h2 class="philosophy-heading">Why we stopped blaming people</h2>
+  </div>
+  <div>
+    <p class="philosophy-text">
+      For decades our cities have run awareness campaigns, organized cleanliness drives,
+      and appealed to civic sense. The cities kept declining.
+      <strong>Because the problem was never the people.</strong> It was the systems —
+      broken, unaccountable, invisible to those who suffer them most.
+    </p>
+    <p class="philosophy-text">
+      Singapore didn't become clean through education. Japan didn't build civic culture through appeals.
+      They built systems where the right behaviour was easy and the wrong behaviour was costly.
+      <strong>The culture followed the system — not the other way around.</strong>
+    </p>
+    <div class="philosophy-manifesto">
+      "Bad behaviour = Broken system + No consequences.<br>Fix the system. Don't educate people."
+    </div>
+  </div>
+</section>
+
+<!-- IDEAS -->
+<section class="ideas-section" id="ideas">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Published Ideas</div>
+      <h2 class="section-title">One idea.<br>Every three days.</h2>
+    </div>
+    <p class="section-subtitle">Each idea gets its full moment. Follow on Instagram to get the next one as it drops.</p>
+  </div>
+
+  <!-- IDEA 01 -->
+  <div class="idea-featured reveal">
+    <div class="idea-featured-image">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85"
+           alt="Flex banners on Bangalore roads"
+           onerror="this.parentElement.style.background='#1a1a2e'">
+      <div class="idea-featured-image-overlay"></div>
+      <div class="idea-number-badge">IDEA 01</div>
+      <div class="idea-status-badge">● Live Now</div>
+    </div>
+    <div class="idea-featured-content">
+      <div class="idea-category">Environment & Public Space</div>
+      <h3 class="idea-title">Ban the Flex. Light Up Bangalore.</h3>
+
+      <div class="idea-problem-label">This is what it looks like today</div>
+      <p class="idea-problem">
+        Bangalore generates tonnes of non-recyclable flex banner waste annually. Banners block
+        sightlines, clog drains, cause accidents, and make our city look like a permanent
+        election campaign. Only politicians and wealthy businesses can speak in public space.
+      </p>
+
+      <div class="idea-solution-label">What if it didn't have to be?</div>
+      <p class="idea-solution">
+        Complete ban on flex banners. Weatherproof LED display panels on existing lamp posts —
+        managed by a private operator, bookable by anyone via app. Grandmother, local restaurant,
+        or politician — same platform, same price. From ₹100 a day.
+      </p>
+
+      <div class="how-label">What if we just did this</div>
+      <ul class="how-steps">
+        <li>Fit existing lamp posts with weatherproof LED panels — no new infrastructure needed</li>
+        <li>Anyone books a slot via app — individual, business, or institution</li>
+        <li>BBMP reserves emergency slots for civic alerts and public health messages</li>
+        <li>Revenue shared between private operator and BBMP — self-funding from day one</li>
+      </ul>
+
+      <div class="idea-impact">
+        <div class="idea-impact-label">Impact</div>
+        <p>Instantly beautifies Bangalore. Eliminates tonnes of flex waste annually. Democratizes public communication. Creates new revenue for BBMP. Removes a road safety hazard overnight.</p>
+      </div>
+
+      <a href="https://instagram.com/blueprintforindia" class="watch-reel-link" target="_blank">
+        Watch the reel on Instagram →
+      </a>
+    </div>
+  </div>
+
+  <!-- COMING SOON -->
+  <div class="reveal">
+    <div class="coming-soon-header">Coming next — one idea every 3 days</div>
+    <div class="coming-soon-grid">
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">IDEA 02</div>
+        <div class="coming-soon-title">Public Grounds & Parks for Every Child</div>
+        <div class="coming-soon-category">Children & Community</div>
+        <div class="coming-soon-tag">Coming soon</div>
+      </div>
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">IDEA 03</div>
+        <div class="coming-soon-title">Food Surplus App for Marriages</div>
+        <div class="coming-soon-category">Social Infrastructure</div>
+        <div class="coming-soon-tag">Coming soon</div>
+      </div>
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">IDEA 04</div>
+        <div class="coming-soon-title">Road SLA System</div>
+        <div class="coming-soon-category">Civic Infrastructure</div>
+        <div class="coming-soon-tag">Coming soon</div>
+      </div>
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">IDEA 05</div>
+        <div class="coming-soon-title">Managed Lakefront Experience</div>
+        <div class="coming-soon-category">Environment</div>
+        <div class="coming-soon-tag">Coming soon</div>
+      </div>
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">IDEA 06</div>
+        <div class="coming-soon-title">Speed Alert App</div>
+        <div class="coming-soon-category">Mobility & Safety</div>
+        <div class="coming-soon-tag">Coming soon</div>
+      </div>
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">IDEA 07</div>
+        <div class="coming-soon-title">Water Tanker App with Quality Ratings</div>
+        <div class="coming-soon-category">Water Infrastructure</div>
+        <div class="coming-soon-tag">Coming soon</div>
+      </div>
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">IDEA 08</div>
+        <div class="coming-soon-title">Mini Feeder Bus Network</div>
+        <div class="coming-soon-category">Public Transport</div>
+        <div class="coming-soon-tag">Coming soon</div>
+      </div>
+      <div class="coming-soon-card">
+        <div class="coming-soon-number">+ more</div>
+        <div class="coming-soon-title">Follow on Instagram to get each idea as it drops</div>
+        <div class="coming-soon-category">One every 3 days</div>
+        <div class="coming-soon-tag">Follow to unlock</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-image-container reveal">
+    <img class="about-image"
+      src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=800&q=85"
+      alt="Bangalore streets"
+      onerror="this.style.background='#333'">
+    <div class="about-image-frame"></div>
+    <div class="about-years-badge">
+      <span class="about-years-number">35</span>
+      <span class="about-years-label">Years in Bangalore</span>
+    </div>
+  </div>
+
+  <div class="about-content reveal">
+    <div class="section-label">About</div>
+    <h2 class="about-title">Born in this city.<br><em>Refusing to watch it die.</em></h2>
+    <p class="about-text">
+      I have lived in Bangalore for 35 years. I have watched it transform from a garden city —
+      clean lakes, wide tree-lined roads, a pace of life that was uniquely ours — into something
+      that breaks my heart a little every day.
+    </p>
+    <p class="about-text">
+      This is not a complaint page. I am not interested in blaming politicians, blaming citizens,
+      or sharing outrage. <strong>I am interested in building the system that should have existed 20 years ago.</strong>
+    </p>
+    <p class="about-text">
+      Everything wrong with Bangalore is wrong with every Indian city. These ideas don't belong
+      to one city. They belong to all of us.
+    </p>
+    <div class="about-divider"></div>
+    <div class="about-signature">Jino Jose</div>
+    <div class="about-signature-sub">Citizen. Photographer. Bangalore, 2026.</div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="instagram-section" id="follow">
+  <div class="instagram-label">Follow the Series</div>
+  <h2 class="instagram-title">One idea. Every three days.</h2>
+  <p class="instagram-subtitle">
+    Each reel introduces one idea. The website adds the full detail.
+    Follow so you don't miss the next one.
+  </p>
+  <a href="https://instagram.com/blueprintforindia" class="instagram-handle" target="_blank">
+    @blueprintforindia
+  </a>
+  <span class="instagram-cadence">New idea drops every 3 days</span>
+</section>
+
+<footer>
+  <div class="footer-brand">Blueprint for <span>India</span></div>
+  <div class="footer-credit">Conceived and authored by Jino Jose · Bangalore, 2026</div>
+  <div class="footer-license">
+    Creative Commons Attribution<br>
+    NonCommercial 4.0
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 60 ? '0 4px 24px rgba(13,17,23,0.1)' : 'none';
+  });
+</script>
+</body>
+</html>
