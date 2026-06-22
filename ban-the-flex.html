@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ban the Flex — Blueprint for India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D1117;
+    --paper: #F5F0E8;
+    --saffron: #E8650A;
+    --teal: #0D6B6E;
+    --cream: #FAF7F0;
+    --warm-gray: #8C7E6E;
+    --border: rgba(13,17,23,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,240,232,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--saffron); }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--warm-gray);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--saffron); }
+
+  /* HERO */
+  .idea-hero {
+    margin-top: 72px;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .idea-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(10%) contrast(1.05);
+  }
+
+  .idea-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,17,23,0.85) 0%, rgba(13,17,23,0.2) 60%, transparent 100%);
+  }
+
+  .idea-hero-content {
+    position: absolute;
+    bottom: 48px;
+    left: 60px;
+    right: 60px;
+  }
+
+  .idea-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .idea-number {
+    background: var(--saffron);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 5px 14px;
+    letter-spacing: 0.08em;
+  }
+
+  .idea-category-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(245,240,232,0.7);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .idea-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .idea-hero-tagline {
+    font-size: 1.1rem;
+    color: rgba(245,240,232,0.75);
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* CONTENT */
+  .idea-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .idea-nav-strip {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+  }
+
+  .idea-nav-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .idea-nav-pill:hover, .idea-nav-pill.active {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+
+  /* SECTIONS */
+  .content-block {
+    margin-bottom: 56px;
+  }
+
+  .block-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .block-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .block-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .block-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #3D3530;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .block-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    border-left: 3px solid var(--saffron);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: rgba(232,101,10,0.05);
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* HOW IT WORKS */
+  .steps-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .step-item:last-child { border-bottom: none; }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--saffron);
+    opacity: 0.4;
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .step-content h4 {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .step-content p {
+    font-size: 0.9rem;
+    color: #4A4040;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th {
+    background: var(--ink);
+    color: white;
+    padding: 12px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .comparison-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    color: #3D3530;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .comparison-table tr:nth-child(even) td {
+    background: rgba(13,17,23,0.02);
+  }
+
+  /* IMPACT BAND */
+  .impact-band {
+    background: var(--teal);
+    padding: 40px 48px;
+    margin: 48px 0;
+  }
+
+  .impact-band-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+
+  .impact-band-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .impact-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .impact-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .impact-item::before {
+    content: '✓';
+    color: rgba(255,255,255,0.6);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .impact-item p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* REAL WORLD */
+  .example-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .example-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+    background: white;
+  }
+
+  .example-city {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 8px;
+  }
+
+  .example-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .example-text {
+    font-size: 0.85rem;
+    color: #4A4040;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* WHAT NEEDS TO HAPPEN */
+  .action-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .action-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    background: white;
+  }
+
+  .action-who {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(13,107,110,0.08);
+    padding: 4px 10px;
+    white-space: nowrap;
+    height: fit-content;
+    margin-top: 2px;
+  }
+
+  .action-what {
+    font-size: 0.9rem;
+    color: #3D3530;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .action-what strong {
+    font-weight: 600;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* DEBATE */
+  .debate-section {
+    background: var(--ink);
+    padding: 48px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .debate-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 16px;
+  }
+
+  .debate-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .debate-text {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+
+  .debate-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .debate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .debate-btn-primary {
+    background: var(--saffron);
+    color: white;
+    border: 2px solid var(--saffron);
+  }
+
+  .debate-btn-primary:hover {
+    background: transparent;
+    color: var(--saffron);
+  }
+
+  .debate-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(245,240,232,0.3);
+  }
+
+  .debate-btn-secondary:hover {
+    border-color: white;
+  }
+
+  /* NEXT IDEA */
+  .next-idea {
+    border: 1px solid var(--border);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    margin-top: 48px;
+  }
+
+  .next-idea:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(13,17,23,0.08);
+  }
+
+  .next-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+
+  .next-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--ink);
+  }
+
+  .next-arrow {
+    font-size: 1.5rem;
+    color: var(--saffron);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(245,240,232,0.08);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--paper);
+  }
+
+  .footer-brand span { color: var(--saffron); }
+
+  .footer-credit {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.35);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .idea-hero-content { left: 24px; right: 24px; bottom: 32px; }
+    .idea-content { padding: 48px 24px; }
+    .impact-items { grid-template-columns: 1fr; }
+    .example-cards { grid-template-columns: 1fr; }
+    .debate-section { padding: 32px 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">Blueprint for <span>India</span></a>
+  <a href="../index.html#ideas" class="nav-back">← All Ideas</a>
+</nav>
+
+<!-- HERO -->
+<div class="idea-hero">
+  <img src="../idea01.png" alt="Digital LED boards on Bangalore lamp posts replacing flex banners">
+  <div class="idea-hero-overlay"></div>
+  <div class="idea-hero-content">
+    <div class="idea-hero-meta">
+      <span class="idea-number">IDEA 01</span>
+      <span class="idea-category-tag">Environment & Public Space · Bangalore</span>
+    </div>
+    <h1 class="idea-hero-title">Ban the Flex.<br>Light Up Bangalore.</h1>
+    <p class="idea-hero-tagline">"This is what it looks like today. What if it didn't have to be?"</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="idea-content">
+
+  <!-- THE PROBLEM -->
+  <div class="content-block">
+    <div class="block-label">This is what it looks like today</div>
+    <h2 class="block-heading">Our lamp posts are drowning in plastic.</h2>
+    <p class="block-text">
+      Walk down any major road in Bangalore. Every lamp post, every signal pole, every junction —
+      wrapped in flex banners. Politicians smiling for elections that ended two years ago.
+      Birthday wishes that were never taken down. Festival greetings from three seasons back.
+    </p>
+    <p class="block-text">
+      <strong>Bangalore generates tonnes of non-recyclable flex banner waste every year.</strong>
+      This plastic is not recyclable. It doesn't biodegrade. It falls into drains during rain,
+      clogs them, and contributes to the flooding that paralyzes the city every monsoon.
+      It blocks sightlines at junctions, creating road safety hazards.
+      And it makes our city look like it's permanently in election mode.
+    </p>
+
+    <div class="pull-quote">
+      <p>"Only politicians and wealthy businesses can afford to speak in public space. Everyone else is invisible."</p>
+    </div>
+
+    <p class="block-text">
+      The current system is broken in another way too — it's deeply unequal.
+      A politician can plaster their face across 500 lamp posts for a birthday celebration.
+      A local restaurant trying to announce a new menu cannot afford the same reach.
+      A citizen who wants to announce their mother's 80th birthday has no option at all.
+      Public space belongs to everyone — but right now it only serves those with money and power.
+    </p>
+  </div>
+
+  <!-- THE IDEA -->
+  <div class="content-block">
+    <div class="block-label">What if it didn't have to be?</div>
+    <h2 class="block-heading">Replace every flex banner with a smart LED display. Open to everyone.</h2>
+    <p class="block-text">
+      Complete ban on flex banners across Bangalore. Every existing lamp post gets a
+      weatherproof LED display panel — no new infrastructure, no new poles, no new wiring.
+      The panels are managed by a private operator through a simple app.
+      Anyone can book a slot. From ₹100 per pole per day.
+    </p>
+    <p class="block-text">
+      Politician, local restaurant, grandmother announcing her daughter's wedding, school
+      announcing admissions — <strong>same platform, same price, same access.</strong>
+      Public space becomes genuinely public for the first time.
+    </p>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="content-block">
+    <div class="block-label">What if we just did this</div>
+    <h2 class="block-heading">How it works in practice.</h2>
+    <ol class="steps-list">
+      <li class="step-item">
+        <span class="step-number">01</span>
+        <div class="step-content">
+          <h4>BBMP passes a flex ban order</h4>
+          <p>All new flex banners prohibited from a set date. Existing banners given 30 days to be removed. This is a policy decision — no technology needed at this stage.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">02</span>
+        <div class="step-content">
+          <h4>Private operator fits LED panels on existing lamp posts</h4>
+          <p>Weatherproof panels installed on lamp posts across the city — using existing poles and power infrastructure. The operator funds the installation in exchange for a revenue share agreement with BBMP.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">03</span>
+        <div class="step-content">
+          <h4>Anyone books a slot via app</h4>
+          <p>Choose location, choose duration, upload your content, pay online. Content goes through basic auto-moderation — no hate speech, no obscenity. Everything else is permitted.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">04</span>
+        <div class="step-content">
+          <h4>BBMP reserves emergency broadcast slots</h4>
+          <p>During floods, public health emergencies, or civic announcements — BBMP can override all displays instantly. The poles become a city-wide communication network at zero additional cost.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">05</span>
+        <div class="step-content">
+          <h4>Revenue shared between operator and BBMP</h4>
+          <p>The system is self-funding from day one. BBMP earns revenue from public infrastructure without spending a rupee on installation or maintenance.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="content-block">
+    <div class="block-label">The Numbers</div>
+    <h2 class="block-heading">Flex vs Digital — what changes.</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>Flex Banner Today</th>
+          <th>LED Display</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Environmental impact</td>
+          <td>Non-recyclable plastic, clogs drains</td>
+          <td>Zero waste, reusable indefinitely</td>
+        </tr>
+        <tr>
+          <td>Who can access it</td>
+          <td>Politicians + wealthy businesses only</td>
+          <td>Anyone — from ₹100/day</td>
+        </tr>
+        <tr>
+          <td>Road safety</td>
+          <td>Blocks sightlines, falls in wind</td>
+          <td>No physical hazard</td>
+        </tr>
+        <tr>
+          <td>Revenue for BBMP</td>
+          <td>Zero</td>
+          <td>Revenue share from day one</td>
+        </tr>
+        <tr>
+          <td>Civic communication</td>
+          <td>Not possible</td>
+          <td>Emergency broadcasts instantly</td>
+        </tr>
+        <tr>
+          <td>City aesthetics</td>
+          <td>Visual chaos</td>
+          <td>Clean, ordered, modern</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- IMPACT -->
+  <div class="impact-band">
+    <div class="impact-band-label">Impact</div>
+    <div class="impact-band-title">What changes the day this goes live.</div>
+    <div class="impact-items">
+      <div class="impact-item"><p>Bangalore instantly looks cleaner — visible to every resident within 24 hours</p></div>
+      <div class="impact-item"><p>Tonnes of flex waste eliminated from landfill every year</p></div>
+      <div class="impact-item"><p>Drain clogging from fallen flex reduces — less monsoon flooding</p></div>
+      <div class="impact-item"><p>Any citizen can now speak in public space for ₹100</p></div>
+      <div class="impact-item"><p>BBMP earns new revenue from existing infrastructure</p></div>
+      <div class="impact-item"><p>City gets an instant civic communication network for emergencies</p></div>
+    </div>
+  </div>
+
+  <!-- REAL WORLD -->
+  <div class="content-block">
+    <div class="block-label">It already works elsewhere</div>
+    <h2 class="block-heading">Cities that have done this.</h2>
+    <div class="example-cards">
+      <div class="example-card">
+        <div class="example-city">Singapore</div>
+        <div class="example-title">Clean public communication infrastructure</div>
+        <p class="example-text">Strict but religiously neutral rules on public displays. Digital boards managed centrally. The city is visually clean while still allowing public communication.</p>
+      </div>
+      <div class="example-card">
+        <div class="example-city">Hyderabad</div>
+        <div class="example-title">GHMC digital hoarding regulation</div>
+        <p class="example-text">Greater Hyderabad Municipal Corporation has begun regulating hoardings and moving toward digital displays in several zones. Early proof of concept in an Indian city.</p>
+      </div>
+      <div class="example-card">
+        <div class="example-city">Chennai</div>
+        <div class="example-title">Partial flex ban attempts</div>
+        <p class="example-text">Chennai has attempted flex bans multiple times with partial success. The missing piece every time was a viable alternative — which this provides.</p>
+      </div>
+      <div class="example-card">
+        <div class="example-city">Mumbai</div>
+        <div class="example-title">Digital display zones</div>
+        <p class="example-text">Several Mumbai zones have moved to regulated digital displays. The democratized booking model — where any citizen can book — is the innovation nobody has implemented yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT NEEDS TO HAPPEN -->
+  <div class="content-block">
+    <div class="block-label">What needs to happen</div>
+    <h2 class="block-heading">Who does what to make this real.</h2>
+    <ul class="action-list">
+      <li class="action-item">
+        <span class="action-who">BBMP</span>
+        <div class="action-what">
+          <strong>Pass a flex ban order</strong>
+          This is the critical first step. BBMP already has the authority. It's a policy decision, not a technology project. Political will is the only requirement.
+        </div>
+      </li>
+      <li class="action-item">
+        <span class="action-who">Private Operator</span>
+        <div class="action-what">
+          <strong>Build and install the LED network</strong>
+          A private company funds installation in exchange for revenue sharing. BBMP provides the lamp post access and the policy mandate. Operator provides the technology and maintenance.
+        </div>
+      </li>
+      <li class="action-item">
+        <span class="action-who">Citizens</span>
+        <div class="action-what">
+          <strong>Demand it and use it</strong>
+          Public pressure on elected officials to pass the ban. And once it exists — use the platform. The more citizens use it, the more democratic and powerful it becomes.
+        </div>
+      </li>
+      <li class="action-item">
+        <span class="action-who">Media</span>
+        <div class="action-what">
+          <strong>Hold BBMP accountable for implementation</strong>
+          Flex bans have been proposed and abandoned before. Media scrutiny is what keeps the pressure on and prevents quiet shelving.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- DEBATE -->
+  <div class="debate-section">
+    <div class="debate-label">Join the conversation</div>
+    <h2 class="debate-title">Agree? Disagree?<br>Tell us why.</h2>
+    <p class="debate-text">
+      These are ideas, not answers. The best version of any idea comes from debate.
+      Watch the reel, share your thoughts in the comments, or visit the site for more detail.
+    </p>
+    <div class="debate-links">
+      <a href="https://instagram.com/blueprintforindia" class="debate-btn debate-btn-primary" target="_blank">
+        Watch the reel on Instagram
+      </a>
+      <a href="https://blueprintforindia.com" class="debate-btn debate-btn-secondary" target="_blank">
+        More ideas on the site
+      </a>
+    </div>
+  </div>
+
+  <!-- NEXT IDEA -->
+  <a href="#" class="next-idea">
+    <div>
+      <div class="next-label">Coming next — Idea 02</div>
+      <div class="next-title">Public Grounds & Parks for Every Child</div>
+    </div>
+    <span class="next-arrow">→</span>
+  </a>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Blueprint for <span>India</span></div>
+  <div class="footer-credit">Conceived and authored by Jino Jose · Bangalore, 2026 · Creative Commons Attribution NonCommercial 4.0</div>
+</footer>
+
+</body>
+</html>
