@@ -840,6 +840,15 @@
     text-align: right;
   }
 
+  .footer-visitors {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.4);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-visitors span { color: var(--saffron); font-weight: 500; }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -1139,6 +1148,7 @@
 <footer>
   <div class="footer-brand">Blueprint for <span>India</span></div>
   <div class="footer-credit">Conceived and authored by Jino Jose · Bangalore, 2026</div>
+  <div class="footer-visitors" id="visitor-count"></div>
   <div class="footer-license">
     Creative Commons Attribution<br>
     NonCommercial 4.0
@@ -1161,6 +1171,17 @@
     const nav = document.querySelector('nav');
     nav.style.boxShadow = window.scrollY > 60 ? '0 4px 24px rgba(13,17,23,0.1)' : 'none';
   });
+
+  // Visitor counter
+  fetch('https://abacus.jasoncameron.dev/hit/blueprintforindia-com/site-visits')
+    .then(res => res.json())
+    .then(data => {
+      const el = document.getElementById('visitor-count');
+      if (el && typeof data.value === 'number') {
+        el.innerHTML = '<span>' + data.value.toLocaleString() + '</span> visitors so far';
+      }
+    })
+    .catch(() => {});
 </script>
 </body>
 </html>
