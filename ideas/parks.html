@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ban the Flex — Blueprint for India</title>
+<title>Public Grounds & Parks for Every Child — Blueprint for India</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -64,7 +64,7 @@
 
   .nav-back:hover { color: var(--saffron); }
 
-  /* HERO */
+  /* HERO (no photo yet — patterned teal/saffron field standing in for one) */
   .idea-hero {
     margin-top: 72px;
     height: 60vh;
@@ -77,13 +77,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: sepia(10%) contrast(1.05);
+    object-position: center 25%;
+    filter: sepia(8%) contrast(1.05);
   }
 
   .idea-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(13,17,23,0.85) 0%, rgba(13,17,23,0.2) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(13,17,23,0.88) 0%, rgba(13,17,23,0.15) 65%, transparent 100%);
   }
 
   .idea-hero-content {
@@ -141,32 +142,6 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 80px 40px;
-  }
-
-  .idea-nav-strip {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 60px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 24px;
-  }
-
-  .idea-nav-pill {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border: 1px solid var(--border);
-    color: var(--warm-gray);
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .idea-nav-pill:hover, .idea-nav-pill.active {
-    background: var(--ink);
-    color: white;
-    border-color: var(--ink);
   }
 
   /* SECTIONS */
@@ -370,6 +345,14 @@
     border: 1px solid var(--border);
     padding: 24px;
     background: white;
+  }
+
+  .example-card img {
+    display: block;
+    width: calc(100% + 48px);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin: -24px -24px 16px -24px;
   }
 
   .example-city {
@@ -599,15 +582,15 @@
 
 <!-- HERO -->
 <div class="idea-hero">
-  <img src="../idea01.png" alt="Digital LED boards on Bangalore lamp posts replacing flex banners">
+  <img src="../idea02-hero.png" alt="A birthday celebration under string lights and balloons at a Bangalore park">
   <div class="idea-hero-overlay"></div>
   <div class="idea-hero-content">
     <div class="idea-hero-meta">
-      <span class="idea-number">IDEA 01</span>
-      <span class="idea-category-tag">Environment & Public Space · Bangalore</span>
+      <span class="idea-number">IDEA 02</span>
+      <span class="idea-category-tag">Children & Community · Bangalore</span>
     </div>
-    <h1 class="idea-hero-title">Ban the Flex.<br>Light Up Bangalore.</h1>
-    <p class="idea-hero-tagline">"This is what it looks like today. What if it didn't have to be?"</p>
+    <h1 class="idea-hero-title">Bangalore's Parks.<br>Open to Everyone.</h1>
+    <p class="idea-hero-tagline">"The venues already exist. We just never opened them."</p>
   </div>
 </div>
 
@@ -617,48 +600,77 @@
   <!-- THE PROBLEM -->
   <div class="content-block">
     <div class="block-label">This is what it looks like today</div>
-    <h2 class="block-heading">Our lamp posts are drowning in plastic.</h2>
+    <h2 class="block-heading">Beautiful. Maintained. Barely used.</h2>
     <p class="block-text">
-      Walk down any major road in Bangalore. Every lamp post, every signal pole, every junction —
-      wrapped in flex banners. Politicians smiling for elections that ended two years ago.
-      Birthday wishes that were never taken down. Festival greetings from three seasons back.
+      Bangalore has over a thousand public parks. Most of them are genuinely
+      well kept — open sky, old trees, benches, green space that belongs to
+      all of us. And most of them sit empty, day after day, because nobody
+      thinks of a public park as somewhere they're actually allowed to
+      <em>use</em> — not just walk through.
     </p>
     <p class="block-text">
-      <strong>Bangalore generates tonnes of non-recyclable flex banner waste every year.</strong>
-      This plastic is not recyclable. It doesn't biodegrade. It falls into drains during rain,
-      clogs them, and contributes to the flooding that paralyzes the city every monsoon.
-      It blocks sightlines at junctions, creating road safety hazards.
-      And it makes our city look like it's permanently in election mode.
+      A child's birthday. A grandmother's 80th. A small haldi ceremony.
+      <strong>Not every family can afford a party hall</strong> — but every
+      family deserves a place to celebrate. Right now there's no way to book
+      a park for an afternoon, so that need goes unmet even though the space
+      to meet it is sitting right there, unused.
     </p>
 
     <div class="pull-quote">
-      <p>"Only politicians and wealthy businesses can afford to speak in public space. Everyone else is invisible."</p>
+      <p>"Not every family can afford a party hall. But every family deserves a place to celebrate."</p>
     </div>
-
-    <p class="block-text">
-      The current system is broken in another way too — it's deeply unequal.
-      A politician can plaster their face across 500 lamp posts for a birthday celebration.
-      A local restaurant trying to announce a new menu cannot afford the same reach.
-      A citizen who wants to announce their mother's 80th birthday has no option at all.
-      Public space belongs to everyone — but right now it only serves those with money and power.
-    </p>
   </div>
 
   <!-- THE IDEA -->
   <div class="content-block">
-    <div class="block-label">What if it didn't have to be?</div>
-    <h2 class="block-heading">Replace every flex banner with a smart LED display. Open to everyone.</h2>
+    <div class="block-label">What if you could book it?</div>
+    <h2 class="block-heading">A simple booking system. A few hours. A nominal fee. Under open sky.</h2>
     <p class="block-text">
-      Complete ban on flex banners across Bangalore. Every existing lamp post gets a
-      weatherproof LED display panel — no new infrastructure, no new poles, no new wiring.
-      The panels are managed by a private operator through a simple app.
-      Anyone can book a slot. From ₹100 per pole per day.
+      Map every public park in Bangalore and list it on a simple app — photos,
+      facilities, capacity. Let anyone book a few hours for a celebration:
+      a child's birthday, a grandmother's 80th, a small haldi, a family
+      get-together. A nominal fee covers the booking and funds the park's
+      upkeep. Free or discounted for children's birthdays and lower-income
+      families, always.
     </p>
     <p class="block-text">
-      Politician, local restaurant, grandmother announcing her daughter's wedding, school
-      announcing admissions — <strong>same platform, same price, same access.</strong>
-      Public space becomes genuinely public for the first time.
+      Nothing new needs to be built. <strong>The parks are already beautiful
+      and already maintained</strong> — this just opens the door that was
+      never really closed, just never offered.
     </p>
+  </div>
+
+  <!-- IT'S ALREADY HAPPENING -->
+  <div class="content-block">
+    <div class="block-label">It's already happening — just informally</div>
+    <h2 class="block-heading">Families already find a way. This just makes it official.</h2>
+    <p class="block-text">
+      This isn't a hypothetical. Bangalore families are already turning park
+      benches into birthday venues and haldi ceremonies — figuring it out
+      themselves, one balloon string at a time, because the alternative is a
+      party hall they can't always afford. A booking system doesn't invent
+      this. It just makes it easy, reliable, and open to every family.
+    </p>
+    <div class="example-cards">
+      <div class="example-card">
+        <img src="../idea02-family.png" alt="A family gathered around a birthday cake at a Bangalore park bench">
+        <div class="example-city">Malleshpalya</div>
+        <div class="example-title">A birthday, celebrated anyway</div>
+        <p class="example-text">No hall, no hired venue — just a cake on a park bench and everyone who matters standing around it.</p>
+      </div>
+      <div class="example-card">
+        <img src="../idea02-bbmp.png" alt="A birthday celebration at BBMP Children's Park, Neelasandra, Bangalore">
+        <div class="example-city">BBMP Children's Park, Neelasandra</div>
+        <div class="example-title">Cake, candles, an actual public park</div>
+        <p class="example-text">The park was already there, already maintained by BBMP. The family just showed up and made it theirs for an afternoon.</p>
+      </div>
+      <div class="example-card">
+        <img src="../idea02-haldi.png" alt="A haldi ceremony held at Srinivasapura BBMP Park, Bangalore">
+        <div class="example-city">Srinivasapura BBMP Park</div>
+        <div class="example-title">Even a haldi, under open sky</div>
+        <p class="example-text">It doesn't have to be a birthday. Any family occasion — a haldi, an anniversary, a small function — fits under the same trees.</p>
+      </div>
+    </div>
   </div>
 
   <!-- HOW IT WORKS -->
@@ -669,36 +681,50 @@
       <li class="step-item">
         <span class="step-number">01</span>
         <div class="step-content">
-          <h4>BBMP passes a flex ban order</h4>
-          <p>All new flex banners prohibited from a set date. Existing banners given 30 days to be removed. This is a policy decision — no technology needed at this stage.</p>
+          <h4>Every public park mapped and listed on one app</h4>
+          <p>Photos, facilities, capacity, and allowed activities for every park in the city — so families know exactly what they're booking before they show up.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">02</span>
         <div class="step-content">
-          <h4>Private operator fits LED panels on existing lamp posts</h4>
-          <p>Weatherproof panels installed on lamp posts across the city — using existing poles and power infrastructure. The operator funds the installation in exchange for a revenue share agreement with BBMP.</p>
+          <h4>Book a slot for a few hours</h4>
+          <p>A birthday, an anniversary, a haldi, a small family function. Pick a park, pick a time slot, book it — the same way you'd book anything else.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">03</span>
         <div class="step-content">
-          <h4>Anyone books a slot via app</h4>
-          <p>Choose location, choose duration, upload your content, pay online. Content goes through basic auto-moderation — no hate speech, no obscenity. Everything else is permitted.</p>
+          <h4>A nominal fee, not a party-hall price</h4>
+          <p>Far below what a commercial venue charges — enough to fund upkeep, not enough to price out the families who need this most.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">04</span>
         <div class="step-content">
-          <h4>BBMP reserves emergency broadcast slots</h4>
-          <p>During floods, public health emergencies, or civic announcements — BBMP can override all displays instantly. The poles become a city-wide communication network at zero additional cost.</p>
+          <h4>Free or discounted for children's birthdays and lower-income families</h4>
+          <p>A child's birthday shouldn't be a budget decision. Public parks become a dignified, affordable venue for the celebration every family deserves.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">05</span>
         <div class="step-content">
-          <h4>Revenue shared between operator and BBMP</h4>
-          <p>The system is self-funding from day one. BBMP earns revenue from public infrastructure without spending a rupee on installation or maintenance.</p>
+          <h4>Booking fees fund the park's own upkeep</h4>
+          <p>The system pays for itself — the more a park is used and loved, the better maintained it becomes.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">06</span>
+        <div class="step-content">
+          <h4>Basic setup and clean-up handled on site</h4>
+          <p>Park staff manage turnaround between bookings, so the space is ready for the next family and returns to public use afterward.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">07</span>
+        <div class="step-content">
+          <h4>A park that's booked every weekend is a park that stays loved</h4>
+          <p>Active use is what keeps a public space cared for and valued by the people around it, long after the ribbon-cutting is forgotten.</p>
         </div>
       </li>
     </ol>
@@ -707,45 +733,45 @@
   <!-- COMPARISON -->
   <div class="content-block">
     <div class="block-label">The Numbers</div>
-    <h2 class="block-heading">Flex vs Digital — what changes.</h2>
+    <h2 class="block-heading">Park Today vs Bookable Park — what changes.</h2>
     <table class="comparison-table">
       <thead>
         <tr>
           <th>Factor</th>
-          <th>Flex Banner Today</th>
-          <th>LED Display</th>
+          <th>Today</th>
+          <th>Mapped & Bookable</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Environmental impact</td>
-          <td>Non-recyclable plastic, clogs drains</td>
-          <td>Zero waste, reusable indefinitely</td>
+          <td>Can you celebrate there?</td>
+          <td>No structured way to — informal, uncertain</td>
+          <td>Yes — book a slot in minutes on the app</td>
         </tr>
         <tr>
-          <td>Who can access it</td>
-          <td>Politicians + wealthy businesses only</td>
-          <td>Anyone — from ₹100/day</td>
+          <td>Cost of a celebration venue</td>
+          <td>Party hall pricing, out of reach for many</td>
+          <td>Nominal fee — free for children's birthdays</td>
         </tr>
         <tr>
-          <td>Road safety</td>
-          <td>Blocks sightlines, falls in wind</td>
-          <td>No physical hazard</td>
+          <td>Daily usage of the park</td>
+          <td>Mostly passers-through, largely empty</td>
+          <td>Active — booked for family occasions</td>
         </tr>
         <tr>
-          <td>Revenue for BBMP</td>
-          <td>Zero</td>
-          <td>Revenue share from day one</td>
+          <td>Maintenance funding</td>
+          <td>BBMP budget alone</td>
+          <td>Booking fees add ongoing funding</td>
         </tr>
         <tr>
-          <td>Civic communication</td>
-          <td>Not possible</td>
-          <td>Emergency broadcasts instantly</td>
+          <td>Visibility of what's available</td>
+          <td>Word-of-mouth, not listed anywhere</td>
+          <td>Every park listed with photos & capacity</td>
         </tr>
         <tr>
-          <td>City aesthetics</td>
-          <td>Visual chaos</td>
-          <td>Clean, ordered, modern</td>
+          <td>Community connection to the space</td>
+          <td>Low — a place you pass, not use</td>
+          <td>High — a place tied to family memories</td>
         </tr>
       </tbody>
     </table>
@@ -756,39 +782,34 @@
     <div class="impact-band-label">Impact</div>
     <div class="impact-band-title">What changes the day this goes live.</div>
     <div class="impact-items">
-      <div class="impact-item"><p>Bangalore instantly looks cleaner — visible to every resident within 24 hours</p></div>
-      <div class="impact-item"><p>Tonnes of flex waste eliminated from landfill every year</p></div>
-      <div class="impact-item"><p>Drain clogging from fallen flex reduces — less monsoon flooding</p></div>
-      <div class="impact-item"><p>Any citizen can now speak in public space for ₹100</p></div>
-      <div class="impact-item"><p>BBMP earns new revenue from existing infrastructure</p></div>
-      <div class="impact-item"><p>City gets an instant civic communication network for emergencies</p></div>
+      <div class="impact-item"><p>Every family gets a dignified, affordable place to celebrate</p></div>
+      <div class="impact-item"><p>Children's birthdays free or nominal, always</p></div>
+      <div class="impact-item"><p>Bangalore's already-good parks finally get used, not just passed through</p></div>
+      <div class="impact-item"><p>Booking fees create ongoing funding for upkeep</p></div>
+      <div class="impact-item"><p>Rebuilds community bonds through shared neighbourhood spaces</p></div>
+      <div class="impact-item"><p>Zero new construction — just opens a door that already exists</p></div>
     </div>
   </div>
 
   <!-- REAL WORLD -->
   <div class="content-block">
     <div class="block-label">It already works elsewhere</div>
-    <h2 class="block-heading">Cities that have done this.</h2>
+    <h2 class="block-heading">Places that have done this.</h2>
     <div class="example-cards">
       <div class="example-card">
-        <div class="example-city">Singapore</div>
-        <div class="example-title">Clean public communication infrastructure</div>
-        <p class="example-text">Strict but religiously neutral rules on public displays. Digital boards managed centrally. The city is visually clean while still allowing public communication.</p>
+        <div class="example-city">Worldwide</div>
+        <div class="example-title">National park booking systems</div>
+        <p class="example-text">National park systems around the world already run on slot booking for capacity and upkeep — proof that a booking layer makes a public space more usable, not less accessible.</p>
       </div>
       <div class="example-card">
-        <div class="example-city">Hyderabad</div>
-        <div class="example-title">GHMC digital hoarding regulation</div>
-        <p class="example-text">Greater Hyderabad Municipal Corporation has begun regulating hoardings and moving toward digital displays in several zones. Early proof of concept in an Indian city.</p>
+        <div class="example-city">Bangalore</div>
+        <div class="example-title">Puttenahalli Lake community management</div>
+        <p class="example-text">Active community management turned Puttenahalli Lake into one of Bangalore's best-loved public spaces — proof that when people actually use a space, it stays cared for.</p>
       </div>
       <div class="example-card">
-        <div class="example-city">Chennai</div>
-        <div class="example-title">Partial flex ban attempts</div>
-        <p class="example-text">Chennai has attempted flex bans multiple times with partial success. The missing piece every time was a viable alternative — which this provides.</p>
-      </div>
-      <div class="example-card">
-        <div class="example-city">Mumbai</div>
-        <div class="example-title">Digital display zones</div>
-        <p class="example-text">Several Mumbai zones have moved to regulated digital displays. The democratized booking model — where any citizen can book — is the innovation nobody has implemented yet.</p>
+        <div class="example-city">Singapore & UK</div>
+        <div class="example-title">Shared public grounds by design</div>
+        <p class="example-text">Both treat public open space as something meant to be booked and used for community and family occasions, not just walked past — the same shift this idea makes for Bangalore.</p>
       </div>
     </div>
   </div>
@@ -801,50 +822,32 @@
       <li class="action-item">
         <span class="action-who">BBMP</span>
         <div class="action-what">
-          <strong>Pass a flex ban order</strong>
-          This is the critical first step. BBMP already has the authority. It's a policy decision, not a technology project. Political will is the only requirement.
+          <strong>List parks on a booking system and set the fee structure</strong>
+          A straightforward policy decision — no new construction, no new land. Parks already exist and are already maintained; this just opens a booking layer on top.
         </div>
       </li>
       <li class="action-item">
-        <span class="action-who">Private Operator</span>
+        <span class="action-who">Park Staff</span>
         <div class="action-what">
-          <strong>Build and install the LED network</strong>
-          A private company funds installation in exchange for revenue sharing. BBMP provides the lamp post access and the policy mandate. Operator provides the technology and maintenance.
+          <strong>Handle setup and turnaround between bookings</strong>
+          Light coordination to keep the park ready for the next booking and returned to normal public use afterward.
         </div>
       </li>
       <li class="action-item">
-        <span class="action-who">Citizens</span>
+        <span class="action-who">App Operator</span>
         <div class="action-what">
-          <strong>Demand it and use it</strong>
-          Public pressure on elected officials to pass the ban. And once it exists — use the platform. The more citizens use it, the more democratic and powerful it becomes.
+          <strong>Build and run the booking platform</strong>
+          A simple, reliable app listing every park with photos, facilities, and live availability — the single layer that makes the whole system usable.
         </div>
       </li>
       <li class="action-item">
-        <span class="action-who">Media</span>
+        <span class="action-who">Families</span>
         <div class="action-what">
-          <strong>Hold BBMP accountable for implementation</strong>
-          Flex bans have been proposed and abandoned before. Media scrutiny is what keeps the pressure on and prevents quiet shelving.
+          <strong>Use it — for the celebrations that matter</strong>
+          Every booking proves the demand and keeps the park loved. The best way to protect a public space is to actually use it.
         </div>
       </li>
     </ul>
-  </div>
-
-  <!-- TECHNICAL -->
-  <div class="content-block">
-    <div class="block-label">Technical Details</div>
-    <h2 class="block-heading">Interested in the how?</h2>
-    <p class="block-text">
-      This page presents the idea — the why and the what. The technical implementation details,
-      including connectivity, power, content management infrastructure, cost per unit, and
-      hardware specifications, are being documented separately.
-    </p>
-    <p class="block-text">
-      If you're an engineer, urban planner, infrastructure operator, or someone who wants to
-      explore implementation — we'd love to hear from you.
-    </p>
-    <a href="https://forms.gle/MLeWvm2ZiCtp7eRT8" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:white;padding:14px 28px;font-size:0.88rem;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s;" onmouseover="this.style.background='#E8650A'" onmouseout="this.style.background='#0D1117'">
-      Share your thoughts or interest →
-    </a>
   </div>
 
   <!-- DEBATE -->
@@ -856,7 +859,7 @@
       Watch the reel, share your thoughts in the comments, or visit the site for more detail.
     </p>
     <div class="debate-links">
-      <a href="https://www.instagram.com/reel/DauKme7A1ox/" class="debate-btn debate-btn-primary" target="_blank">
+      <a href="https://www.instagram.com/reel/DdDDKMBgRJE/" class="debate-btn debate-btn-primary" target="_blank">
         Watch the reel on Instagram
       </a>
       <a href="https://blueprintforindia.com" class="debate-btn debate-btn-secondary" target="_blank">
@@ -866,10 +869,10 @@
   </div>
 
   <!-- NEXT IDEA -->
-  <a href="ideas/parks.html" class="next-idea">
+  <a href="../index.html#ideas" class="next-idea">
     <div>
-      <div class="next-label">Idea 02 — Live now</div>
-      <div class="next-title">Bangalore's Parks. Open to Everyone.</div>
+      <div class="next-label">Coming next — Idea 03</div>
+      <div class="next-title">Solar-Covered Rajakaluves</div>
     </div>
     <span class="next-arrow">→</span>
   </a>
