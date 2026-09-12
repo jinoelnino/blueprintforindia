@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Over the Rajakaluve — Blueprint for India</title>
+<meta name="description" content="Bangalore's rajakaluves were built to carry rainwater. Today they carry garbage. Cover them with solar panels — cleaner drains, shaded walkways, and power generated on land we already own.">
+<meta property="og:title" content="Solar Over the Rajakaluve — Blueprint for India">
+<meta property="og:description" content="Cleaner drains. Greener streets. Brighter Bangalore. No new land needed — the infrastructure is already ours.">
+<meta property="og:image" content="https://blueprintforindia.com/idea03-hero.jpg">
+<meta property="og:url" content="https://blueprintforindia.com/ideas/rajakaluve.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solar Over the Rajakaluve — Blueprint for India">
+<meta name="twitter:description" content="Cleaner drains. Greener streets. Brighter Bangalore.">
+<meta name="twitter:image" content="https://blueprintforindia.com/idea03-hero.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D1117;
+    --paper: #F5F0E8;
+    --saffron: #E8650A;
+    --teal: #0D6B6E;
+    --cream: #FAF7F0;
+    --warm-gray: #8C7E6E;
+    --border: rgba(13,17,23,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,240,232,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-brand span { color: var(--saffron); }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--warm-gray);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--saffron); }
+
+  /* HERO */
+  .idea-hero {
+    margin-top: 72px;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .idea-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    filter: sepia(8%) contrast(1.05);
+  }
+
+  .idea-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,17,23,0.94) 0%, rgba(13,17,23,0.55) 45%, rgba(13,17,23,0.18) 75%, rgba(13,17,23,0.05) 100%);
+  }
+
+  .idea-hero-content {
+    position: absolute;
+    bottom: 48px;
+    left: 60px;
+    right: 60px;
+  }
+
+  .idea-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .idea-number {
+    background: var(--saffron);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 5px 14px;
+    letter-spacing: 0.08em;
+  }
+
+  .idea-category-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(245,240,232,0.7);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .idea-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .idea-hero-tagline {
+    font-size: 1.1rem;
+    color: rgba(245,240,232,0.75);
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* CONTENT */
+  .idea-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* SECTIONS */
+  .content-block {
+    margin-bottom: 56px;
+  }
+
+  .block-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .block-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .block-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .block-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #3D3530;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .block-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* FIGURE */
+  .figure {
+    margin: 32px 0;
+  }
+
+  .figure img {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+
+  .figure figcaption {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    border-left: 3px solid var(--saffron);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: rgba(232,101,10,0.05);
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* HOW IT WORKS */
+  .steps-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .step-item:last-child { border-bottom: none; }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--saffron);
+    opacity: 0.4;
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .step-content h4 {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .step-content p {
+    font-size: 0.9rem;
+    color: #4A4040;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* COMPARISON TABLE */
+  .table-scroll { overflow-x: auto; }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.9rem;
+    min-width: 520px;
+  }
+
+  .comparison-table th {
+    background: var(--ink);
+    color: white;
+    padding: 12px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .comparison-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    color: #3D3530;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .comparison-table tr:nth-child(even) td {
+    background: rgba(13,17,23,0.02);
+  }
+
+  /* IMPACT BAND */
+  .impact-band {
+    background: var(--teal);
+    padding: 40px 48px;
+    margin: 48px 0;
+  }
+
+  .impact-band-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+
+  .impact-band-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .impact-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .impact-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .impact-item::before {
+    content: '✓';
+    color: rgba(255,255,255,0.6);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .impact-item p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* REAL WORLD */
+  .example-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .example-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+    background: white;
+  }
+
+  .example-card img {
+    display: block;
+    width: calc(100% + 48px);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin: -24px -24px 16px -24px;
+  }
+
+  .example-city {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 8px;
+  }
+
+  .example-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .example-text {
+    font-size: 0.85rem;
+    color: #4A4040;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* WHAT NEEDS TO HAPPEN */
+  .action-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .action-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    background: white;
+  }
+
+  .action-who {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(13,107,110,0.08);
+    padding: 4px 10px;
+    white-space: nowrap;
+    height: fit-content;
+    margin-top: 2px;
+  }
+
+  .action-what {
+    font-size: 0.9rem;
+    color: #3D3530;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .action-what strong {
+    font-weight: 600;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* HONEST OBJECTIONS */
+  .objection {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+
+  .objection h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .objection p {
+    font-size: 0.9rem;
+    color: #4A4040;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* REEL POSTER */
+  .reel-strip {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: white;
+    padding: 28px;
+    margin: 48px 0;
+  }
+
+  .reel-strip img {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+
+  .reel-strip-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 12px;
+  }
+
+  .reel-strip h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .reel-strip p {
+    font-size: 0.92rem;
+    color: #4A4040;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* DEBATE */
+  .debate-section {
+    background: var(--ink);
+    padding: 48px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .debate-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 16px;
+  }
+
+  .debate-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .debate-text {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+
+  .debate-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .debate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .debate-btn-primary {
+    background: var(--saffron);
+    color: white;
+    border: 2px solid var(--saffron);
+  }
+
+  .debate-btn-primary:hover {
+    background: transparent;
+    color: var(--saffron);
+  }
+
+  .debate-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(245,240,232,0.3);
+  }
+
+  .debate-btn-secondary:hover {
+    border-color: white;
+  }
+
+  /* NEXT IDEA */
+  .next-idea {
+    border: 1px solid var(--border);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    margin-top: 48px;
+  }
+
+  .next-idea:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(13,17,23,0.08);
+  }
+
+  .next-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+
+  .next-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--ink);
+  }
+
+  .next-arrow {
+    font-size: 1.5rem;
+    color: var(--saffron);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(245,240,232,0.08);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--paper);
+  }
+
+  .footer-brand span { color: var(--saffron); }
+
+  .footer-credit {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.35);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .idea-hero-content { left: 24px; right: 24px; bottom: 32px; }
+    .idea-content { padding: 48px 24px; }
+    .impact-items { grid-template-columns: 1fr; }
+    .example-cards { grid-template-columns: 1fr; }
+    .impact-band { padding: 32px 24px; }
+    .reel-strip { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+    .reel-strip img { max-width: 260px; }
+    .debate-section { padding: 32px 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">Blueprint for <span>India</span></a>
+  <a href="../index.html#ideas" class="nav-back">← All Ideas</a>
+</nav>
+
+<!-- HERO -->
+<div class="idea-hero">
+  <img src="../idea03-hero.jpg" alt="A Bangalore stormwater drain covered with a solar canopy, clean water running below and shaded walkways on either side">
+  <div class="idea-hero-overlay"></div>
+  <div class="idea-hero-content">
+    <div class="idea-hero-meta">
+      <span class="idea-number">IDEA 03</span>
+      <span class="idea-category-tag">Environment &amp; Energy · Bangalore</span>
+    </div>
+    <h1 class="idea-hero-title">Solar Over the<br>Rajakaluve.</h1>
+    <p class="idea-hero-tagline">"No new land needed. The infrastructure is already ours. We just never looked up."</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="idea-content">
+
+  <!-- THE PROBLEM -->
+  <div class="content-block">
+    <div class="block-label">This is what it looks like today</div>
+    <h2 class="block-heading">Built to carry rainwater. Today it carries garbage.</h2>
+    <p class="block-text">
+      A rajakaluve is a stormwater channel — the artificial drain network built to
+      move rainwater across Bangalore and into its lakes. That is the only job it
+      was ever meant to do.
+    </p>
+    <p class="block-text">
+      Today it carries garbage, sewage and stagnant filth. It sits open to the sky
+      through every neighbourhood in the city, and because it is open, anything can
+      be thrown into it — and is. <strong>Kilometres of exposed, polluted drains
+      across the city.</strong> We walk past them, hold our breath, and look away.
+    </p>
+
+    <figure class="figure">
+      <img src="../idea03-before-after.jpg" alt="Top: an open rajakaluve choked with plastic waste beside a broken footpath. Bottom: the same corridor with a solar canopy, clean flowing water, planting and a walkway">
+      <figcaption>The same stretch of drain — as it is, and as it could be.</figcaption>
+    </figure>
+
+    <div class="pull-quote">
+      <p>"Kilometres of exposed, polluted drains across the city. Kilometres of unused potential — sitting right there."</p>
+    </div>
+  </div>
+
+  <!-- THE IDEA -->
+  <div class="content-block">
+    <div class="block-label">What if we covered it?</div>
+    <h2 class="block-heading">Not with concrete. With solar panels.</h2>
+    <p class="block-text">
+      Cover the rajakaluve with an elevated solar canopy. Not a slab that seals the
+      drain shut and makes it impossible to clean — a raised, removable panel
+      structure that shades the channel, keeps garbage out, and turns the length of
+      the drain into a generating asset.
+    </p>
+    <p class="block-text">
+      Underneath, the water flows the way it was always supposed to: covered, shaded,
+      no longer a dumping ground. Above, every metre of panel generates electricity —
+      for the streetlights on that road, for the water pumps that serve the
+      neighbourhood, and for whatever is left over to go back into the grid.
+    </p>
+    <p class="block-text">
+      Alongside it, the maintenance edge the drain already needs becomes something
+      people can actually use — <strong>a shaded walkway on a street that has
+      never had one.</strong>
+    </p>
+
+    <figure class="figure">
+      <img src="../idea03-canal.jpg" alt="Clean water running under a solar canopy, with planting along the channel wall and people walking on a shaded path beside it">
+      <figcaption>The channel below — covered, shaded, and closed to dumping.</figcaption>
+    </figure>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="content-block">
+    <div class="block-label">What if we just did this</div>
+    <h2 class="block-heading">How it works in practice.</h2>
+    <ol class="steps-list">
+      <li class="step-item">
+        <span class="step-number">01</span>
+        <div class="step-content">
+          <h4>Map and grade every rajakaluve stretch in the city</h4>
+          <p>Width, alignment, sun exposure, road access. Not every stretch is a candidate — the straight, wide, unshaded ones along main roads are where this starts.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">02</span>
+        <div class="step-content">
+          <h4>Build an elevated canopy, not a sealed slab</h4>
+          <p>Panels on a raised frame above the channel, with removable sections at intervals. The drain stays reachable for desilting — covering it must never mean losing the ability to clean it.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">03</span>
+        <div class="step-content">
+          <h4>Screen the channel so garbage can no longer be dumped in</h4>
+          <p>Once the top is covered and the sides are edged, the drain stops being an open bin. The single largest source of blockage is designed out rather than cleaned up after.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">04</span>
+        <div class="step-content">
+          <h4>Wire the power to the street it sits on</h4>
+          <p>Streetlights, water pumps, park lighting, BBMP buildings along the route. Local generation used locally — the shortest possible distance between panel and socket.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">05</span>
+        <div class="step-content">
+          <h4>Export the surplus back into the grid</h4>
+          <p>Whatever the street doesn't use is metered and sold. The canopy stops being a cost line and becomes revenue that pays for the drain's own maintenance.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">06</span>
+        <div class="step-content">
+          <h4>Put a shaded walkway beside it</h4>
+          <p>The drain's maintenance edge becomes a footpath and cycle lane under the same canopy — shade in a city that badly needs it, on land nobody had to acquire.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-number">07</span>
+        <div class="step-content">
+          <h4>Start with one pilot stretch and publish the numbers</h4>
+          <p>One kilometre, fully instrumented — units generated, rupees saved, silt removed, complaints filed. Make the pilot's data public, then scale on evidence rather than on a press release.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="content-block">
+    <div class="block-label">The Numbers</div>
+    <h2 class="block-heading">Open drain vs solar-covered drain — what changes.</h2>
+    <div class="table-scroll">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Today</th>
+            <th>Solar-covered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dumping into the channel</td>
+            <td>Open to the sky — anything goes in</td>
+            <td>Covered and edged — designed out</td>
+          </tr>
+          <tr>
+            <td>Land required</td>
+            <td>—</td>
+            <td>Zero. The corridor is already public</td>
+          </tr>
+          <tr>
+            <td>Electricity generated</td>
+            <td>None</td>
+            <td>Every sunlit metre of the alignment</td>
+          </tr>
+          <tr>
+            <td>Who pays for upkeep</td>
+            <td>BBMP budget alone</td>
+            <td>Power savings and export revenue offset it</td>
+          </tr>
+          <tr>
+            <td>The street beside it</td>
+            <td>Broken edge, no shade, no footpath</td>
+            <td>Shaded walkway and cycle lane</td>
+          </tr>
+          <tr>
+            <td>Smell, mosquitoes, overflow</td>
+            <td>Constant, worst in monsoon</td>
+            <td>Reduced — covered flow, less blockage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- IMPACT -->
+  <div class="impact-band">
+    <div class="impact-band-label">Impact</div>
+    <div class="impact-band-title">What changes the day this goes live.</div>
+    <div class="impact-items">
+      <div class="impact-item"><p>Garbage can no longer be thrown into the drain</p></div>
+      <div class="impact-item"><p>Clean power generated on land the city already owns</p></div>
+      <div class="impact-item"><p>Streetlights and water pumps run on the drain beside them</p></div>
+      <div class="impact-item"><p>Shaded walkways and cycle lanes with zero land acquisition</p></div>
+      <div class="impact-item"><p>Less blockage means less flooding when the rain comes</p></div>
+      <div class="impact-item"><p>Export revenue funds the drain's own maintenance</p></div>
+    </div>
+  </div>
+
+  <!-- REAL WORLD -->
+  <div class="content-block">
+    <div class="block-label">It already works elsewhere</div>
+    <h2 class="block-heading">Places that have done this.</h2>
+    <div class="example-cards">
+      <div class="example-card">
+        <div class="example-city">Gujarat</div>
+        <div class="example-title">The Narmada canal-top solar project</div>
+        <p class="example-text">India's first canal-top solar plant, on the Narmada branch canal at Chandrasan, proved the model in 2012 — power generated over a water channel, on land nobody had to acquire, with less evaporation below.</p>
+      </div>
+      <div class="example-card">
+        <div class="example-city">Punjab &amp; Kerala</div>
+        <div class="example-title">Canal-top and floating solar since</div>
+        <p class="example-text">Canal-top installations in Punjab and floating solar on Kerala's reservoirs followed the same logic: water infrastructure is linear, public, and unshaded — which is exactly what solar wants.</p>
+      </div>
+      <div class="example-card">
+        <div class="example-city">Seoul</div>
+        <div class="example-title">Cheonggyecheon</div>
+        <p class="example-text">A stream written off as a drain and buried under a motorway was reopened as the city's most-used public corridor. Different intervention, same lesson: a neglected water channel is a civic asset in disguise.</p>
+      </div>
+      <div class="example-card">
+        <div class="example-city">Worldwide</div>
+        <div class="example-title">Solar over car parks and rail</div>
+        <p class="example-text">Cities everywhere are now building solar over infrastructure that already exists — car parks, rail corridors, reservoirs — because the cheapest land for a panel is land you have already paid for.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE STREET -->
+  <div class="content-block">
+    <div class="block-label">What it does to the street</div>
+    <h2 class="block-heading">The drain stops being the worst part of the road.</h2>
+    <p class="block-text">
+      Right now the rajakaluve is the edge of the street that everyone plans around —
+      the side you don't walk on, the side property values dip towards, the stretch
+      that floods first. Covered, planted and lit, that same edge becomes the side
+      people choose.
+    </p>
+    <div class="example-cards">
+      <div class="example-card">
+        <img src="../idea03-street.jpg" alt="A covered drain corridor running alongside a busy Bangalore road, with traffic on one side and a shaded walkway on the other">
+        <div class="example-city">The main-road stretch</div>
+        <div class="example-title">Traffic on one side, a walkway on the other</div>
+        <p class="example-text">The canopy runs along the road the drain already follows. No land acquired, no route negotiated — the alignment was decided decades ago.</p>
+      </div>
+      <div class="example-card">
+        <img src="../idea03-signage.jpg" alt="A solar-canopied drain corridor with civic signage banners and people walking and cycling beneath">
+        <div class="example-city">The corridor</div>
+        <div class="example-title">A civic space, not a service gap</div>
+        <p class="example-text">Lighting, signage and planting turn a maintenance easement into somewhere people actually walk — the cheapest new public space the city can build.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HONEST OBJECTIONS -->
+  <div class="content-block">
+    <div class="block-label">The honest objections</div>
+    <h2 class="block-heading">The three questions this idea has to answer.</h2>
+    <div class="objection">
+      <h4>"Cover a drain and you can never clean it again."</h4>
+      <p>This is the real risk, and it is why the canopy must be elevated and removable rather than a concrete slab. Desilting access at fixed intervals is not an optional extra — it is the condition on which the whole idea stands or falls.</p>
+    </div>
+    <div class="objection">
+      <h4>"Panels over a sewage channel will foul and stop generating."</h4>
+      <p>Cleaning and access have to be budgeted into the contract from day one, the same way they are for canal-top solar. A pilot stretch exists precisely to measure how much output is actually lost before the city commits to a hundred more kilometres.</p>
+    </div>
+    <div class="objection">
+      <h4>"This doesn't fix the sewage going into the drain."</h4>
+      <p>It doesn't, and it shouldn't pretend to. Sewage entering a stormwater channel is a separate failure that needs separate work. This idea removes the garbage, the dumping and the heat — and pays for itself while the harder problem gets solved.</p>
+    </div>
+  </div>
+
+  <!-- WHAT NEEDS TO HAPPEN -->
+  <div class="content-block">
+    <div class="block-label">What needs to happen</div>
+    <h2 class="block-heading">Who does what to make this real.</h2>
+    <ul class="action-list">
+      <li class="action-item">
+        <span class="action-who">BBMP</span>
+        <div class="action-what">
+          <strong>Identify and release one pilot stretch</strong>
+          Pick a straight, wide, sunlit kilometre on a main road, and set the access conditions the canopy design has to meet for desilting.
+        </div>
+      </li>
+      <li class="action-item">
+        <span class="action-who">BESCOM</span>
+        <div class="action-what">
+          <strong>Meter it and buy the surplus</strong>
+          A net-metering arrangement for the stretch, so the power feeds the street's own lighting and pumps first and the excess goes back to the grid.
+        </div>
+      </li>
+      <li class="action-item">
+        <span class="action-who">Developer</span>
+        <div class="action-what">
+          <strong>Build and maintain under a long-term contract</strong>
+          Financed the way canal-top solar already is — the operator earns from generation and carries the obligation to keep both panels and drain access serviceable.
+        </div>
+      </li>
+      <li class="action-item">
+        <span class="action-who">Citizens</span>
+        <div class="action-what">
+          <strong>Ask for the pilot's numbers in public</strong>
+          Units generated, rupees saved, silt removed. A pilot that publishes its data is a pilot that can be scaled — or honestly abandoned.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- REEL -->
+  <div class="reel-strip">
+    <a href="https://www.instagram.com/reel/DdK_PaBgXmT/" target="_blank" rel="noopener">
+      <img src="../idea03-poster.png" alt="Blueprint for India reel poster — Idea 03, Solar Over the Rajakaluve">
+    </a>
+    <div>
+      <div class="reel-strip-label">Idea 03 · The reel</div>
+      <h3>Cleaner drains. Greener streets. Brighter Bangalore.</h3>
+      <p>
+        "What if it was covered — not with concrete, but with solar panels? What if
+        garbage could no longer be dumped in? What if the water underneath actually
+        ran clean?"
+      </p>
+    </div>
+  </div>
+
+  <!-- DEBATE -->
+  <div class="debate-section">
+    <div class="debate-label">Join the conversation</div>
+    <h2 class="debate-title">Agree? Disagree?<br>Tell us why.</h2>
+    <p class="debate-text">
+      These are ideas, not answers. The best version of any idea comes from debate.
+      Watch the reel, share your thoughts in the comments, or visit the site for more detail.
+    </p>
+    <div class="debate-links">
+      <a href="https://www.instagram.com/reel/DdK_PaBgXmT/" class="debate-btn debate-btn-primary" target="_blank" rel="noopener">
+        Watch the reel on Instagram
+      </a>
+      <a href="https://blueprintforindia.com" class="debate-btn debate-btn-secondary" target="_blank" rel="noopener">
+        More ideas on the site
+      </a>
+    </div>
+  </div>
+
+  <!-- NEXT IDEA -->
+  <a href="../index.html#ideas" class="next-idea">
+    <div>
+      <div class="next-label">Coming next — Idea 04</div>
+      <div class="next-title">Road SLA System</div>
+    </div>
+    <span class="next-arrow">→</span>
+  </a>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Blueprint for <span>India</span></div>
+  <div class="footer-credit">Conceived and authored by Jino Jose · Bangalore, 2026 · Creative Commons Attribution NonCommercial 4.0</div>
+</footer>
+
+</body>
+</html>
