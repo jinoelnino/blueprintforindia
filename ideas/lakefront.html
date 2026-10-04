@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solar Over the Rajakaluve — Blueprint for India</title>
-<meta name="description" content="Bangalore's rajakaluves were built to carry rainwater. Today they carry garbage. Cover them with solar panels — cleaner drains, shaded walkways, and power generated on land we already own.">
-<meta property="og:title" content="Solar Over the Rajakaluve — Blueprint for India">
-<meta property="og:description" content="Cleaner drains. Greener streets. Brighter Bangalore. No new land needed — the infrastructure is already ours.">
-<meta property="og:image" content="https://blueprintforindia.com/idea03-hero.jpg">
-<meta property="og:url" content="https://blueprintforindia.com/ideas/rajakaluve.html">
+<title>Two Ways to Watch the Lake — Blueprint for India</title>
+<meta name="description" content="Bangalore is a city of lakes, but most of us only see them through a fence. Idea 04, Part 1: a raised viewing structure at every lake — an open deck for the breeze and a glass deck for the rain. Two ways to watch the same lake.">
+<meta property="og:title" content="Two Ways to Watch the Lake — Blueprint for India">
+<meta property="og:description" content="An open deck for the birdwatcher. A glass deck for the rainy evening. Two ways to watch the same lake — nobody has to choose.">
+<meta property="og:image" content="https://blueprintforindia.com/idea04-hero.jpg">
+<meta property="og:url" content="https://blueprintforindia.com/ideas/lakefront.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Solar Over the Rajakaluve — Blueprint for India">
-<meta name="twitter:description" content="Cleaner drains. Greener streets. Brighter Bangalore.">
-<meta name="twitter:image" content="https://blueprintforindia.com/idea03-hero.jpg">
+<meta name="twitter:title" content="Two Ways to Watch the Lake — Blueprint for India">
+<meta name="twitter:description" content="Two ways to watch the same lake. Nobody has to choose.">
+<meta name="twitter:image" content="https://blueprintforindia.com/idea04-hero.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -661,6 +661,64 @@
     color: rgba(245,240,232,0.35);
   }
 
+  .idea-number { white-space: nowrap; }
+
+  /* SERIES NOTE */
+  .series-note {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 18px 24px;
+    margin-bottom: 56px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #4A4040;
+    font-weight: 300;
+  }
+  .series-note strong { font-weight: 600; color: var(--ink); }
+
+  /* TALL FIGURE (vertical renders) */
+  .figure-tall img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 55%;
+  }
+
+  /* TWO DECKS */
+  .deck-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 8px 0 32px;
+  }
+  .deck-card { border: 1px solid var(--border); background: white; }
+  .deck-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+  .deck-card-body { padding: 20px 22px 24px; }
+
+  /* PART 2 TEASER */
+  .part2-teaser {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+    align-items: center;
+    background: var(--ink);
+    padding: 28px;
+    margin-top: 48px;
+  }
+  .part2-teaser img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+  .part2-teaser h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .part2-teaser p { font-size: 0.92rem; color: rgba(245,240,232,0.7); line-height: 1.7; font-weight: 300; }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
@@ -673,6 +731,9 @@
     .reel-strip img { max-width: 260px; }
     .debate-section { padding: 32px 24px; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+    .deck-pair { grid-template-columns: 1fr; }
+    .part2-teaser { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+    .part2-teaser img { max-width: 260px; }
   }
 </style>
 </head>
@@ -685,73 +746,100 @@
 
 <!-- HERO -->
 <div class="idea-hero">
-  <img src="../idea03-hero.jpg" alt="A Bangalore stormwater drain covered with a solar canopy, clean water running below and shaded walkways on either side">
+  <img src="../idea04-hero.jpg" alt="A raised lakeside viewing structure at sunset — an open deck with birdwatchers and photographers beside a glass-covered deck with people seated on benches">
   <div class="idea-hero-overlay"></div>
   <div class="idea-hero-content">
     <div class="idea-hero-meta">
-      <span class="idea-number">IDEA 03</span>
-      <span class="idea-category-tag">Environment &amp; Energy · Bangalore</span>
+      <span class="idea-number">IDEA 04 · PART 1</span>
+      <span class="idea-category-tag">Environment &amp; Lakes · Bangalore</span>
     </div>
-    <h1 class="idea-hero-title">Solar Over the<br>Rajakaluve.</h1>
-    <p class="idea-hero-tagline">"No new land needed. The infrastructure is already ours. We just never looked up."</p>
+    <h1 class="idea-hero-title">Two Ways to<br>Watch the Lake.</h1>
+    <p class="idea-hero-tagline">"Two ways to watch the same lake. Nobody has to choose."</p>
   </div>
 </div>
 
 <!-- CONTENT -->
 <div class="idea-content">
 
+  <div class="series-note">
+    <strong>A two-part idea.</strong> Idea 04 is the <em>Managed Lakefront Experience</em> — treating
+    Bangalore's lakes the way great cities treat their best public places. Part 1 is about
+    the simplest thing a lake should offer: a place to actually see it from.
+    Part 2 — the evening out — follows next.
+  </div>
+
   <!-- THE PROBLEM -->
   <div class="content-block">
     <div class="block-label">This is what it looks like today</div>
-    <h2 class="block-heading">Built to carry rainwater. Today it carries garbage.</h2>
+    <h2 class="block-heading">A city of lakes. Seen through a fence.</h2>
     <p class="block-text">
-      A rajakaluve is a stormwater channel — the artificial drain network built to
-      move rainwater across Bangalore and into its lakes. That is the only job it
-      was ever meant to do.
+      Bangalore is a city of lakes. Migratory birds. Morning mist. Sunsets over the water.
+      Some of the most beautiful public places in the city are sitting right inside it.
     </p>
     <p class="block-text">
-      Today it carries garbage, sewage and stagnant filth. It sits open to the sky
-      through every neighbourhood in the city, and because it is open, anything can
-      be thrown into it — and is. <strong>Kilometres of exposed, polluted drains
-      across the city.</strong> We walk past them, hold our breath, and look away.
+      But most of us only see them from a broken footpath, or through a fence. A jogging
+      track at water level, a gap between two trees, a wall with the lake somewhere
+      behind it. <strong>We live beside these lakes and almost never really see
+      them.</strong>
     </p>
-
-    <figure class="figure">
-      <img src="../idea03-before-after.jpg" alt="Top: an open rajakaluve choked with plastic waste beside a broken footpath. Bottom: the same corridor with a solar canopy, clean flowing water, planting and a walkway">
-      <figcaption>The same stretch of drain — as it is, and as it could be.</figcaption>
-    </figure>
 
     <div class="pull-quote">
-      <p>"Kilometres of exposed, polluted drains across the city. Kilometres of unused potential — sitting right there."</p>
+      <p>"What if every lake had a place to truly see it from? Raised high. Looking down over the water, the birds, the whole horizon."</p>
     </div>
   </div>
 
   <!-- THE IDEA -->
   <div class="content-block">
-    <div class="block-label">What if we covered it?</div>
-    <h2 class="block-heading">Not with concrete. With solar panels.</h2>
+    <div class="block-label">What if every lake had a place to see it from?</div>
+    <h2 class="block-heading">Raised high. Looking out over the whole lake.</h2>
     <p class="block-text">
-      Cover the rajakaluve with an elevated solar canopy. Not a slab that seals the
-      drain shut and makes it impossible to clean — a raised, removable panel
-      structure that shades the channel, keeps garbage out, and turns the length of
-      the drain into a generating asset.
+      Build a raised viewing structure at every major lake — above the treeline, set back
+      from the water's edge, looking down over the open water, the islands, the birds, and
+      the horizon beyond. Not a tourist gimmick. A public place for the city to stand and
+      look at what it already has.
     </p>
     <p class="block-text">
-      Underneath, the water flows the way it was always supposed to: covered, shaded,
-      no longer a dumping ground. Above, every metre of panel generates electricity —
-      for the streetlights on that road, for the water pumps that serve the
-      neighbourhood, and for whatever is left over to go back into the grid.
-    </p>
-    <p class="block-text">
-      Alongside it, the maintenance edge the drain already needs becomes something
-      people can actually use — <strong>a shaded walkway on a street that has
-      never had one.</strong>
+      And build it so that it works for everyone, in every kind of weather. Which means
+      not one deck, but two.
     </p>
 
-    <figure class="figure">
-      <img src="../idea03-canal.jpg" alt="Clean water running under a solar canopy, with planting along the channel wall and people walking on a shaded path beside it">
-      <figcaption>The channel below — covered, shaded, and closed to dumping.</figcaption>
+    <figure class="figure figure-tall">
+      <img src="../idea04-aerial.jpg" alt="Aerial view of a Bangalore lake at sunset with small tree-covered islands, a walking path along the shore, and raised viewing decks at four points around the water">
+      <figcaption>One lake, several vantage points — each raised deck placed to look across the water, not at it from the edge.</figcaption>
     </figure>
+  </div>
+
+  <!-- TWO WAYS -->
+  <div class="content-block">
+    <div class="block-label">Two ways to watch the lake</div>
+    <h2 class="block-heading">An open deck. And a glass deck beside it.</h2>
+    <div class="deck-pair">
+      <div class="deck-card">
+        <img src="../idea04-open-deck.jpg" alt="An open steel viewing tower above the lake with people at the railing, a stair and a gentle ramp leading up, and a wheelchair user on the ramp">
+        <div class="deck-card-body">
+          <div class="example-city">The open deck</div>
+          <div class="example-title">The breeze exactly as it is</div>
+          <p class="example-text">For the birdwatcher, the photographer, and anyone who wants the wind, the sound of the water and an unobstructed view. Railings, room for a tripod, nothing between you and the lake.</p>
+        </div>
+      </div>
+      <div class="deck-card">
+        <img src="../idea04-glass-deck.jpg" alt="A glass-enclosed viewing deck raised high above the lake on a steel frame, with benches inside, a staircase and a glass lift tower beside it">
+        <div class="deck-card-body">
+          <div class="example-city">The glass deck</div>
+          <div class="example-title">For the rain, the heat and the grandparents</div>
+          <p class="example-text">Covered, shaded and seated — for the rainy evening, the harsh afternoon, and the grandparents who just want to sit and watch. Same view, with a roof and a bench.</p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="figure">
+      <img src="../idea04-two-decks.jpg" alt="A single structure combining an open viewing deck with photographers and a glass-enclosed seating deck, linked by a shared staircase and a glass lift">
+      <figcaption>Both decks on one structure — a shared stair and lift, open air on one side, shelter on the other.</figcaption>
+    </figure>
+
+    <div class="pull-quote">
+      <p>"Two ways to watch the same lake. Nobody has to choose."</p>
+    </div>
   </div>
 
   <!-- HOW IT WORKS -->
@@ -762,50 +850,50 @@
       <li class="step-item">
         <span class="step-number">01</span>
         <div class="step-content">
-          <h4>Map and grade every rajakaluve stretch in the city</h4>
-          <p>Width, alignment, sun exposure, road access. Not every stretch is a candidate — the straight, wide, unshaded ones along main roads are where this starts.</p>
+          <h4>Pick the spot with the birders, not just the engineers</h4>
+          <p>Site every deck where the view is widest and the disturbance is lowest — set back from nesting islands, reed beds and roosting trees. Local birders and the forest department sign off on the location before anything is drawn.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">02</span>
         <div class="step-content">
-          <h4>Build an elevated canopy, not a sealed slab</h4>
-          <p>Panels on a raised frame above the channel, with removable sections at intervals. The drain stays reachable for desilting — covering it must never mean losing the ability to clean it.</p>
+          <h4>Raise it above the treeline</h4>
+          <p>The whole point is height. A deck at canopy level sees the entire lake, the islands and the horizon — something no lakeside path at water level can offer.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">03</span>
         <div class="step-content">
-          <h4>Screen the channel so garbage can no longer be dumped in</h4>
-          <p>Once the top is covered and the sides are edged, the drain stops being an open bin. The single largest source of blockage is designed out rather than cleaned up after.</p>
+          <h4>Build both decks, side by side</h4>
+          <p>An open deck for the breeze and the camera, and a glass-covered deck for shade, rain and seating — on one shared structure, so it costs one foundation, one stair and one lift.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">04</span>
         <div class="step-content">
-          <h4>Wire the power to the street it sits on</h4>
-          <p>Streetlights, water pumps, park lighting, BBMP buildings along the route. Local generation used locally — the shortest possible distance between panel and socket.</p>
+          <h4>Make it reachable for everyone</h4>
+          <p>A lift and a ramp, not just stairs. If a grandparent or a wheelchair user can't get to the top, it isn't a public viewing deck — it's a fitness challenge.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">05</span>
         <div class="step-content">
-          <h4>Export the surplus back into the grid</h4>
-          <p>Whatever the street doesn't use is metered and sold. The canopy stops being a cost line and becomes revenue that pays for the drain's own maintenance.</p>
+          <h4>Design it to be safe for the birds</h4>
+          <p>Patterned, bird-safe glass so it reads as a solid surface in flight. Warm, low lighting pointed at the deck, never at the water. Light-steel frames that sit lightly on the ground and leave the shoreline vegetation alone.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">06</span>
         <div class="step-content">
-          <h4>Put a shaded walkway beside it</h4>
-          <p>The drain's maintenance edge becomes a footpath and cycle lane under the same canopy — shade in a city that badly needs it, on land nobody had to acquire.</p>
+          <h4>Run it as part of a managed lakefront</h4>
+          <p>Opening hours, a capacity per deck, cleaning and upkeep paid for by the lakefront itself — not left to decay after the inauguration. How the whole lakefront pays for itself is Part 2.</p>
         </div>
       </li>
       <li class="step-item">
         <span class="step-number">07</span>
         <div class="step-content">
-          <h4>Start with one pilot stretch and publish the numbers</h4>
-          <p>One kilometre, fully instrumented — units generated, rupees saved, silt removed, complaints filed. Make the pilot's data public, then scale on evidence rather than on a press release.</p>
+          <h4>Start with one lake and see who comes</h4>
+          <p>One pilot structure, one lake. Count the visitors, ask the birders, measure the upkeep. Then repeat it lake by lake on evidence.</p>
         </div>
       </li>
     </ol>
@@ -813,47 +901,47 @@
 
   <!-- COMPARISON -->
   <div class="content-block">
-    <div class="block-label">The Numbers</div>
-    <h2 class="block-heading">Open drain vs solar-covered drain — what changes.</h2>
+    <div class="block-label">What changes</div>
+    <h2 class="block-heading">The lake today vs the lake with a place to see it from.</h2>
     <div class="table-scroll">
       <table class="comparison-table">
         <thead>
           <tr>
             <th>Factor</th>
             <th>Today</th>
-            <th>Solar-covered</th>
+            <th>With viewing decks</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Dumping into the channel</td>
-            <td>Open to the sky — anything goes in</td>
-            <td>Covered and edged — designed out</td>
+            <td>How you see the lake</td>
+            <td>From a footpath, through a fence</td>
+            <td>From above — the whole water and horizon</td>
           </tr>
           <tr>
-            <td>Land required</td>
-            <td>—</td>
-            <td>Zero. The corridor is already public</td>
+            <td>Birdwatching &amp; photography</td>
+            <td>Snatched from the edge, at water level</td>
+            <td>An open deck built for it</td>
           </tr>
           <tr>
-            <td>Electricity generated</td>
-            <td>None</td>
-            <td>Every sunlit metre of the alignment</td>
+            <td>Rain, heat, harsh afternoons</td>
+            <td>You go home</td>
+            <td>Sit in the glass deck and keep watching</td>
           </tr>
           <tr>
-            <td>Who pays for upkeep</td>
-            <td>BBMP budget alone</td>
-            <td>Power savings and export revenue offset it</td>
+            <td>Elderly &amp; wheelchair users</td>
+            <td>Uneven paths, no seating</td>
+            <td>Lift, ramp and benches at the top</td>
           </tr>
           <tr>
-            <td>The street beside it</td>
-            <td>Broken edge, no shade, no footpath</td>
-            <td>Shaded walkway and cycle lane</td>
+            <td>Disturbance to birds</td>
+            <td>People pushing to the edge for a view</td>
+            <td>One sited point, set back from nesting areas</td>
           </tr>
           <tr>
-            <td>Smell, mosquitoes, overflow</td>
-            <td>Constant, worst in monsoon</td>
-            <td>Reduced — covered flow, less blockage</td>
+            <td>Reason to visit the lake</td>
+            <td>A walk, if the path is in shape</td>
+            <td>A destination the neighbourhood is proud of</td>
           </tr>
         </tbody>
       </table>
@@ -863,67 +951,56 @@
   <!-- IMPACT -->
   <div class="impact-band">
     <div class="impact-band-label">Impact</div>
-    <div class="impact-band-title">What changes the day this goes live.</div>
+    <div class="impact-band-title">What changes the day this opens.</div>
     <div class="impact-items">
-      <div class="impact-item"><p>Garbage can no longer be thrown into the drain</p></div>
-      <div class="impact-item"><p>Clean power generated on land the city already owns</p></div>
-      <div class="impact-item"><p>Streetlights and water pumps run on the drain beside them</p></div>
-      <div class="impact-item"><p>Shaded walkways and cycle lanes with zero land acquisition</p></div>
-      <div class="impact-item"><p>Less blockage means less flooding when the rain comes</p></div>
-      <div class="impact-item"><p>Export revenue funds the drain's own maintenance</p></div>
+      <div class="impact-item"><p>Every lake gets a place to truly see it from</p></div>
+      <div class="impact-item"><p>Birdwatchers and photographers get a proper vantage point</p></div>
+      <div class="impact-item"><p>The lake stays usable in rain, heat and the harsh afternoon</p></div>
+      <div class="impact-item"><p>Grandparents and wheelchair users reach the same view as everyone</p></div>
+      <div class="impact-item"><p>Crowds gather at one sited point, not all along the fragile edge</p></div>
+      <div class="impact-item"><p>A lake people visit is a lake people defend</p></div>
     </div>
+  </div>
+
+  <!-- MONSOON -->
+  <div class="content-block">
+    <div class="block-label">In every season</div>
+    <h2 class="block-heading">The lake is at its best when it rains. Today, that's exactly when we leave.</h2>
+    <p class="block-text">
+      Monsoon is when Bangalore's lakes fill, the light goes soft and the water comes
+      alive. It is also when every open lakeside path empties out. The glass deck turns
+      the best weather to watch a lake into the time people actually stay.
+    </p>
+    <figure class="figure figure-tall">
+      <img src="../idea04-rain.jpg" alt="A glass pavilion on stilts beside the lake on a rainy evening, warm lights on inside and a few people seated on benches watching the rain fall on the water">
+      <figcaption>A rainy evening, watched from inside the glass — the moment most lakefronts lose their visitors.</figcaption>
+    </figure>
   </div>
 
   <!-- REAL WORLD -->
   <div class="content-block">
     <div class="block-label">It already works elsewhere</div>
-    <h2 class="block-heading">Places that have done this.</h2>
+    <h2 class="block-heading">Places that built somewhere to look from.</h2>
     <div class="example-cards">
       <div class="example-card">
-        <div class="example-city">Gujarat</div>
-        <div class="example-title">The Narmada canal-top solar project</div>
-        <p class="example-text">India's first canal-top solar plant, on the Narmada branch canal at Chandrasan, proved the model in 2012 — power generated over a water channel, on land nobody had to acquire, with less evaporation below.</p>
+        <div class="example-city">Singapore</div>
+        <div class="example-title">Kranji Marshes — the Raptor Tower</div>
+        <p class="example-text">A three-storey tower built for one purpose: an unobstructed view over the marshes, where visitors watch birds of prey like the White-bellied Sea Eagle without walking into the habitat.</p>
       </div>
       <div class="example-card">
-        <div class="example-city">Punjab &amp; Kerala</div>
-        <div class="example-title">Canal-top and floating solar since</div>
-        <p class="example-text">Canal-top installations in Punjab and floating solar on Kerala's reservoirs followed the same logic: water infrastructure is linear, public, and unshaded — which is exactly what solar wants.</p>
+        <div class="example-city">Singapore</div>
+        <div class="example-title">Sungei Buloh — a tower and hides</div>
+        <p class="example-text">The wetland reserve pairs the Aerie Tower, a lookout for migratory birds, with covered observation hides at ground level. Open and sheltered ways to watch, in one place — the same logic as two decks.</p>
       </div>
       <div class="example-card">
-        <div class="example-city">Seoul</div>
-        <div class="example-title">Cheonggyecheon</div>
-        <p class="example-text">A stream written off as a drain and buried under a motorway was reopened as the city's most-used public corridor. Different intervention, same lesson: a neglected water channel is a civic asset in disguise.</p>
+        <div class="example-city">Singapore</div>
+        <div class="example-title">MacRitchie Reservoir — Jelutong Tower</div>
+        <p class="example-text">A seven-deck tower in a reservoir park, giving a bird's-eye view across the Central Catchment forest. A city water body treated as somewhere worth climbing up to see.</p>
       </div>
       <div class="example-card">
-        <div class="example-city">Worldwide</div>
-        <div class="example-title">Solar over car parks and rail</div>
-        <p class="example-text">Cities everywhere are now building solar over infrastructure that already exists — car parks, rail corridors, reservoirs — because the cheapest land for a panel is land you have already paid for.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- THE STREET -->
-  <div class="content-block">
-    <div class="block-label">What it does to the street</div>
-    <h2 class="block-heading">The drain stops being the worst part of the road.</h2>
-    <p class="block-text">
-      Right now the rajakaluve is the edge of the street that everyone plans around —
-      the side you don't walk on, the side property values dip towards, the stretch
-      that floods first. Covered, planted and lit, that same edge becomes the side
-      people choose.
-    </p>
-    <div class="example-cards">
-      <div class="example-card">
-        <img src="../idea03-street.jpg" alt="A covered drain corridor running alongside a busy Bangalore road, with traffic on one side and a shaded walkway on the other">
-        <div class="example-city">The main-road stretch</div>
-        <div class="example-title">Traffic on one side, a walkway on the other</div>
-        <p class="example-text">The canopy runs along the road the drain already follows. No land acquired, no route negotiated — the alignment was decided decades ago.</p>
-      </div>
-      <div class="example-card">
-        <img src="../idea03-signage.jpg" alt="A solar-canopied drain corridor with civic signage banners and people walking and cycling beneath">
-        <div class="example-city">The corridor</div>
-        <div class="example-title">A civic space, not a service gap</div>
-        <p class="example-text">Lighting, signage and planting turn a maintenance easement into somewhere people actually walk — the cheapest new public space the city can build.</p>
+        <div class="example-city">Bangalore</div>
+        <div class="example-title">Puttenahalli Lake, JP Nagar</div>
+        <p class="example-text">Looked after by a neighbourhood trust, the lake has recorded more than 80 bird species. The birds are already here, in our own lakes. What's missing is a place for the city to see them from.</p>
       </div>
     </div>
   </div>
@@ -933,16 +1010,16 @@
     <div class="block-label">The honest objections</div>
     <h2 class="block-heading">The three questions this idea has to answer.</h2>
     <div class="objection">
-      <h4>"Cover a drain and you can never clean it again."</h4>
-      <p>This is the real risk, and it is why the canopy must be elevated and removable rather than a concrete slab. Desilting access at fixed intervals is not an optional extra — it is the condition on which the whole idea stands or falls.</p>
+      <h4>"A steel tower and crowds will scare the birds away."</h4>
+      <p>It will, if it is put in the wrong place. That is why siting comes first and birders decide it — set back from nesting islands and roosts, bird-safe glass, no lighting on the water. Done right, one fixed viewing point actually reduces disturbance compared with people pushing to the water's edge all along the shore.</p>
     </div>
     <div class="objection">
-      <h4>"Panels over a sewage channel will foul and stop generating."</h4>
-      <p>Cleaning and access have to be budgeted into the contract from day one, the same way they are for canal-top solar. A pilot stretch exists precisely to measure how much output is actually lost before the city commits to a hundred more kilometres.</p>
+      <h4>"Fix the sewage first. This is beautification."</h4>
+      <p>Clean water comes first, and this is not a substitute for it. But a viewing deck has a small footprint and a modest cost next to a lake rejuvenation project — and a lake that thousands of people come to look at is a lake whose pollution can no longer be quietly ignored.</p>
     </div>
     <div class="objection">
-      <h4>"This doesn't fix the sewage going into the drain."</h4>
-      <p>It doesn't, and it shouldn't pretend to. Sewage entering a stormwater channel is a separate failure that needs separate work. This idea removes the garbage, the dumping and the heat — and pays for itself while the harder problem gets solved.</p>
+      <h4>"It will look great on opening day and rust within two years."</h4>
+      <p>This is the real risk, and it's the failure pattern of almost every rejuvenated lake in the city. Which is why the decks only make sense inside a managed lakefront — hours, capacity, upkeep and revenue that stays with the lake. That is Part 2.</p>
     </div>
   </div>
 
@@ -952,31 +1029,31 @@
     <h2 class="block-heading">Who does what to make this real.</h2>
     <ul class="action-list">
       <li class="action-item">
-        <span class="action-who">BBMP</span>
+        <span class="action-who">City lakes dept</span>
         <div class="action-what">
-          <strong>Identify and release one pilot stretch</strong>
-          Pick a straight, wide, sunlit kilometre on a main road, and set the access conditions the canopy design has to meet for desilting.
+          <strong>Choose one rejuvenated lake for a pilot</strong>
+          A lake that is already clean enough to be worth watching, with public land set back from the shore for one structure.
         </div>
       </li>
       <li class="action-item">
-        <span class="action-who">BESCOM</span>
+        <span class="action-who">Birders &amp; forest dept</span>
         <div class="action-what">
-          <strong>Meter it and buy the surplus</strong>
-          A net-metering arrangement for the stretch, so the power feeds the street's own lighting and pumps first and the excess goes back to the grid.
+          <strong>Decide where it goes — and where it must not</strong>
+          Map nesting, roosting and feeding areas first, and make their sign-off on the site a condition of building anything.
         </div>
       </li>
       <li class="action-item">
-        <span class="action-who">Developer</span>
+        <span class="action-who">Architects</span>
         <div class="action-what">
-          <strong>Build and maintain under a long-term contract</strong>
-          Financed the way canal-top solar already is — the operator earns from generation and carries the obligation to keep both panels and drain access serviceable.
+          <strong>Design one structure, two decks, full access</strong>
+          Open and glass-covered decks on a shared frame, with a lift and ramp, bird-safe glass and low lighting — a template that can be repeated lake to lake.
         </div>
       </li>
       <li class="action-item">
         <span class="action-who">Citizens</span>
         <div class="action-what">
-          <strong>Ask for the pilot's numbers in public</strong>
-          Units generated, rupees saved, silt removed. A pilot that publishes its data is a pilot that can be scaled — or honestly abandoned.
+          <strong>Ask for it at your lake</strong>
+          Lake groups and residents' associations are the reason Bangalore's best lakes survived. Ask for a place to see your lake from — and help decide where it goes.
         </div>
       </li>
     </ul>
@@ -984,16 +1061,16 @@
 
   <!-- REEL -->
   <div class="reel-strip">
-    <a href="https://www.instagram.com/reel/DdK_PaBgXmT/" target="_blank" rel="noopener">
-      <img src="../idea03-poster.png" alt="Blueprint for India reel poster — Idea 03, Solar Over the Rajakaluve">
+    <a href="https://instagram.com/blueprintforindia" target="_blank" rel="noopener">
+      <img src="../idea04-two-decks.jpg" alt="Blueprint for India reel — Idea 04, Part 1, Two Ways to Watch the Lake">
     </a>
     <div>
-      <div class="reel-strip-label">Idea 03 · The reel</div>
-      <h3>Cleaner drains. Greener streets. Brighter Bangalore.</h3>
+      <div class="reel-strip-label">Idea 04 · Part 1 · The reel</div>
+      <h3>Two ways to watch the lake.</h3>
       <p>
-        "What if it was covered — not with concrete, but with solar panels? What if
-        garbage could no longer be dumped in? What if the water underneath actually
-        ran clean?"
+        "An open deck — for the birdwatcher, the photographer, anyone who wants the breeze
+        exactly as it is. And a glass-covered deck beside it — for the rainy evening, the
+        harsh afternoon, the grandparents who just want to sit and watch."
       </p>
     </div>
   </div>
@@ -1004,10 +1081,10 @@
     <h2 class="debate-title">Agree? Disagree?<br>Tell us why.</h2>
     <p class="debate-text">
       These are ideas, not answers. The best version of any idea comes from debate.
-      Watch the reel, share your thoughts in the comments, or visit the site for more detail.
+      Which lake should get the first one? Tell us in the comments.
     </p>
     <div class="debate-links">
-      <a href="https://www.instagram.com/reel/DdK_PaBgXmT/" class="debate-btn debate-btn-primary" target="_blank" rel="noopener">
+      <a href="https://instagram.com/blueprintforindia" class="debate-btn debate-btn-primary" target="_blank" rel="noopener">
         Watch the reel on Instagram
       </a>
       <a href="https://blueprintforindia.com" class="debate-btn debate-btn-secondary" target="_blank" rel="noopener">
@@ -1016,11 +1093,21 @@
     </div>
   </div>
 
+  <!-- PART 2 TEASER -->
+  <div class="part2-teaser">
+    <img src="../idea04-lakeside.jpg" alt="A glass lakeside pavilion with people dining at sunset beside a timber jetty over the water, with birds flying low over the lake">
+    <div class="part2-body">
+      <div class="reel-strip-label">Idea 04 · Part 2 · Coming next</div>
+      <h3>The evening out.</h3>
+      <p>This is only the beginning. Next: what a lakefront looks like when it is run like a place people choose to spend their evening — and how it pays for its own upkeep.</p>
+    </div>
+  </div>
+
   <!-- NEXT IDEA -->
-  <a href="lakefront.html" class="next-idea">
+  <a href="../index.html#ideas" class="next-idea">
     <div>
-      <div class="next-label">Next — Idea 04, Part 1</div>
-      <div class="next-title">Two Ways to Watch the Lake</div>
+      <div class="next-label">Coming next — Idea 04, Part 2</div>
+      <div class="next-title">The Evening Out</div>
     </div>
     <span class="next-arrow">→</span>
   </a>
